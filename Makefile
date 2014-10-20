@@ -8,13 +8,13 @@ CFLAGS+=-I/usr/include/pcap
 SWIG=sidecar
 SWIGOBJ=$(SWIG)_wrap.o
 SWIGSRC=$(SWIG)_wrap.cxx
-SWIGCFLAGS=-D_GNU_SOURCE -I/usr/lib/perl5/5.8.5/i386-linux-thread-multi/CORE
+#SWIGCFLAGS=-D_GNU_SOURCE -I/usr/lib/perl5/5.8.5/i386-linux-thread-multi/CORE
 
 SRC=$(wildcard $(VPATH)/*.c) 
 SRC+=$(wildcard $(VPATH)/*.cxx)
 HDRS=$(wildcard include/*.h)
 OBJS=$(subst $(VPATH)/,,$(subst .c,.o,$(SRC)))
-#LIBS+=-lm
+LIBS+=-lm
 #LIBS+=-lpthread 
 LIBS+=-lpcap
 
@@ -94,7 +94,7 @@ install: all
 	cp scripts/cvtimeout.rb $(PREFIX)
 	cp random_prober/informed_probe.sru random_prober/*.rb $(PREFIX)
 	cp random_prober/HOSTS.ip.stoplist $(PREFIX)
-	cp random_prober/stoplist.24.gz $(PREFIX)
+	cp random_prober/stoplist.22.gz $(PREFIX)
 	cp `ldd ./passenger/passenger | grep libpcap | awk '{print $$3}'` $(PREFIX)
 	ldd ./passenger/passenger | grep -q efence && cp `ldd ./passenger/passenger | grep efence | awk '{print $$3}'` $(PREFIX) || true
 	cp -p tar_install/* $(PREFIX)/

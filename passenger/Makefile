@@ -6,11 +6,13 @@ CFLAGS+=-I..
 SRC=$(wildcard $(VPATH)/*.c)
 HDRS=$(wildcard include/*.h)
 OBJS=$(subst $(VPATH)/,,$(subst .c,.o,$(SRC)))
+
 #LIBS+=-lpthread 
+LIBS+=../libsidecar.a
 LIBS+=-lm
 LIBS+=-lpcap
 #LIBS+=-lsidecar
-LIBS+=../libsidecar.a
+
 LDFLAGS+=-Wl,-rpath=.. -Wl,-rpath=. -L..
 
 

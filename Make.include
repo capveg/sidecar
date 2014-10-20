@@ -3,7 +3,7 @@ CTAGS=ctags
 CFLAGS+=-Wall -Wpointer-arith -Wshadow 
 
 ifneq ($(shell uname -m),x86_64)
-CFLAGS+=-Werror
+#CFLAGS+=-Werror
 endif
 
 CFLAGS+=-g
