@@ -1,0 +1,10 @@
+
+gap at hop 6 caused two RR hops to become aliases within the
+gap (8.81 and 8.13) and the off by one of 8.81 and 8.80
+didn't get connected.
+
+kscyng to dnvr doesn't seem to get discovered. (the alias of
+8.81) because of lack of response.
+
+doesn't recover -- 8.77 and 8.76 aren't off-by oned (because
+abilene, I suppose)

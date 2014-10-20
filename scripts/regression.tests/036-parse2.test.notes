@@ -1,0 +1,4 @@
+THere is a bunch of information missing from this trace
+b/c RR forks off from the TR direction.  We would normally catch this,
+but it happens twice!  We could/should come back to fix the tookSamePath()
+logic to include this informatino, but not to break 019-difflensplit or 002-data2dlv

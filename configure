@@ -1,0 +1,18 @@
+#!/bin/sh
+#	Nasty hack to get the svn version into the version.h file
+
+FILE=version.h
+VERSION=`svn update | tr -dc '[:digit:]'`
+
+echo Building version.h with build $VERSION
+
+rm -f $FILE
+cat << EOF > $FILE
+#ifndef VERSION_H
+#define VERSION_H
+
+#define SIDECAR_VERSION "$VERSION"
+
+#endif
+EOF
+

@@ -1,0 +1,54 @@
+TODO: (now)
+------------------------------------------------------------------------------------------------------------
+TODO: (later)
+	Passenger: 
+		- Clean up the probe receiving/handling code : merge it into one function
+		
+--------------------------------------------------------------------------------------------------------------
+KNOWN BUGS:
+	- if we send initial syn, timestamp is not recorded -- FIXME
+
+--------------------------------------------------------------------------------------------------------------
+TODO: (sometime)
+	- add driver-side connection_add_rtt_estimate() code
+	- handle sequence space wrapping :: PAWS
+	- DONE(?) 64bit clean: some of the unittest code is not 64bit clean; who knows about rest (lame)
+	- profile stuff to find out why slow
+	- write an update function to write to somewhere the updates
+
+-----------------------------------------------------------------------------------------------------------------
+NOTES
+
+cvs -d :pserver:anon@cvs.planet-lab.org:/cvs checkout plcmdline
+./plcsh -r user -u capveg@cs.umd.edu -c 'system.listMethods()'
+./plcsh -r user -u capveg@cs.umd.edu -c 'AdmGetNodes([],[ "hostname", "boot_state", "nodenetwork_id","ip"])'
+
+
+----
+
+Planetlab brokenness:
+1145562017.099650 open("passenger.r365/data.216.130.244.91-22747", O_WRONLY|O_APPEND|O_CREAT, 0666) = 86 <1.011424>
+1145562130.265640 open("passenger.r365/data.72.29.76.71-23483", O_WRONLY|O_APPEND|O_CREAT, 0666) = 11 <1.171127>
+1145562204.838152 open("passenger.r365/data.62.99.138.52-24019", O_WRONLY|O_APPEND|O_CREAT, 0666) = 89 <1.379706>
+1145562280.221477 open("passenger.r365/data.167.7.218.5-24517", O_WRONLY|O_APPEND|O_CREAT, 0666) = 99 <1.506587>
+1145562926.738583 open("passenger.r365/data.216.120.241.242-28958", O_WRONLY|O_APPEND|O_CREAT, 0666) = 161 <1.275985>
+1145563221.163969 write(189, "202.57.0.19:80 :: new connection"..., 222) = 222 <1.276195>
+1145563461.830102 open("passenger.r365/data.62.166.138.212-32757", O_WRONLY|O_APPEND|O_CREAT, 0666) = 69 <1.170591>
+1145563571.517208 open("passenger.r365/data.66.45.120.139-33549", O_WRONLY|O_APPEND|O_CREAT, 0666) = 30 <1.484505>
+1145563726.648005 open("passenger.r365/data.64.26.172.56-34581", O_WRONLY|O_APPEND|O_CREAT, 0666) = 121 <1.000987>
+1145564471.577400 open("passenger.r365/data.208.2.209.194-39616", O_WRONLY|O_APPEND|O_CREAT, 0666) = 43 <1.392507>
+1145564971.727222 open("passenger.r365/data.66.33.211.131-42882", O_WRONLY|O_APPEND|O_CREAT, 0666) = 9 <1.373533>
+1145565222.713370 open("passenger.r365/data.206.246.241.158-44580", O_WRONLY|O_APPEND|O_CREAT, 0666) = 56 <1.248658>
+1145565292.321547 open("passenger.r365/data.72.29.74.195-45037", O_WRONLY|O_APPEND|O_CREAT, 0666) = 62 <1.166323>
+1145565608.319898 open("passenger.r365/data.219.118.71.36-47063", O_WRONLY|O_APPEND|O_CREAT, 0666) = 134 <1.206167>
+1145565762.303480 open("passenger.r365/data.213.61.126.89-48022", O_WRONLY|O_APPEND|O_CREAT, 0666) = 131 <1.291558>
+1145565847.535892 open("passenger.r365/data.69.80.208.229-48618", O_WRONLY|O_APPEND|O_CREAT, 0666) = 24 <1.192267>
+1145565887.860416 open("passenger.r365/data.70.85.248.194-33175", O_WRONLY|O_APPEND|O_CREAT, 0666) = 91 <1.267347>
+1145566267.371432 write(25, "ut TTL 14 iteration=2\t time=1145"..., 4096) = 4096 <1.177351>
+1145566307.146484 open("passenger.r365/data.66.181.193.74-51597", O_WRONLY|O_APPEND|O_CREAT, 0666) = 42 <1.025843>
+
+
+Follow up:
+- ran passenger + fast_wget at the same time as a tcpdump, and tcpdump was dropping *more* packets than
+	passenger (passenger ignores non-DF packets).  So, problem is probably not in our code
+

@@ -1,0 +1,29 @@
+TCP Sidecar 		- Rob Sherwood, Neil Spring '06
+	http://www.cs.umd.edu/projects/sidecar
+-------------------------------------------------------------
+
+Look at "INSTALL" for installation instructions
+"README.experiments" for instructions for replicating our experiments
+"condor/README" for instructions for replicating DisCarte's analysis
+
+Relevant parts:
+	- libsidecar.{a,so} in the main directory
+		- sidecar.h documents the API
+	- ./passenger/	: Tool described in IMC06 "Touring the Internet in a TCP Sidecar"
+		- Does not initiate it's own connections, but takes a libcap filter string
+			and listens for connections matching those
+	- ./sideping/	: Ping replacement that functions like netcat but uses sidecar-style
+		TCP probes to get RTT times
+	- ./sidetrace/	: Traceroute replacement that adds RR functionality; works like netcat
+			(one shot version of passenger)
+	- ./artrat/ : Tool from WORLDS06 "A Platform for Unobtrusive Measurement"
+		artrat == Active Receiver-side TCP Rate Analysis Tool
+		Uses correlates RTT data with router delay on incoming links with IP Timestamp
+		option to help locate local bottlenecks.
+	- ./scripts/ : A multitude of (potentially) useful scripts for data analysis and 
+		replicating results.  Interesting points:
+		- ./makemap.sh is a script that takes any number of
+			traces output by passenger, runs them through data2adjacency.pl
+			to create an adjacency list, then uses Graph Viz (www.graphviz.org)
+			to create viewable pdf file of the map generated
+

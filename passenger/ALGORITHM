@@ -1,0 +1,80 @@
+High level: 
+
+For each connection:
+Phase 1) infer safeTTL from ttl from client
+	send recursive packet train of length safeTTL to target
+
+
+	BLARGS!   ALL DOCUMENTS OUT OF DATE FIXME
+
+	for ttl=RR_ok to 1, send probes with Record Route to
+	discover new links; record them
+	guestimate RR_ok based on remotTTL
+	Optimization: can stop when we hit known network space
+
+Phase 4) for ttl=RR_ok+1 to MaxTTL, send probes without Record Route until reach
+	endhost; record those links
+	top when we hit endhost
+
+
+------------------------------------------------------------
+Alg params:
+	MaxTTL = 30
+	Iterations = 3
+
+
+1) On new connection:
+ 	signal wait for connection to go idle (all outstanding data is acknowledged)
+	init per connection state: 
+		probe_type=syn|ack 
+		RR_ok=guessitmate ttl based on remoteTTL
+		phase=phase3
+		iteration=0
+		ttl_stop=MaxTTL+1
+2) If connection is idle:
+	set probe.id to 0x8000+ttl+MAXTTL*iteration
+	switch(phase)
+		phase3:
+			send probe with ttl=nextTTL RR=on
+		phase4:
+			send probe with ttl=nextTTL RR=off
+	set timeout for probe to RTO	 (RT0 * 2 ?)
+	NOTE: the type of probe (syn|ack, data, fin|ack) changes with
+		connection state
+3) If receive ICMP ttl exceeded/dest unreachable received
+	extract packet in ICMP payload
+	print time, packet RTT, packet ttl, TTL= payload.id-state.id
+	if RR option set, print list of ip addresses
+	print if NAT/FIREWALL/ROUTER
+	switch(phase)
+		phase3:
+			nextTTL--
+			if nextTTL < already found or 1
+				phase=phase4
+				nextTTL=RR_ok+1
+		phase4:
+			nextTTL++
+			if nextTTL=ttl_stop
+				signal stop
+				
+4) If data packet received from remote host
+	if packet is a redundant ACK, then it is a response from end-host to a probe
+	print END-HOST
+	record ttl to endhost
+	check our probe schedule:
+		switch(phase)
+			phase3:
+				abort()!
+			phase4:
+				signal stop
+5) If data packet (non-zero payload) is sent to remote host
+	record the time if it's a probe
+	copy the packet
+	probe_type=data
+6) if we get a timewaitCB, 
+	probe_type=fin|ack
+7) if we get a close, free connection state and mark closed
+	
+	
+	
+	

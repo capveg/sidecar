@@ -1,0 +1,153 @@
+#!/usr/bin/env perl
+
+# modified from condor_run by austin 
+
+##/***************************Copyright-DO-NOT-REMOVE-THIS-LINE**
+##
+## Condor Software Copyright Notice
+## Copyright (C) 1990-2006, Condor Team, Computer Sciences Department,
+## University of Wisconsin-Madison, WI.
+##
+## This source code is covered by the Condor Public License, which can
+## be found in the accompanying LICENSE.TXT file, or online at
+## www.condorproject.org.
+##
+## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+## AND THE UNIVERSITY OF WISCONSIN-MADISON "AS IS" AND ANY EXPRESS OR
+## IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+## WARRANTIES OF MERCHANTABILITY, OF SATISFACTORY QUALITY, AND FITNESS
+## FOR A PARTICULAR PURPOSE OR USE ARE DISCLAIMED. THE COPYRIGHT
+## HOLDERS AND CONTRIBUTORS AND THE UNIVERSITY OF WISCONSIN-MADISON
+## MAKE NO MAKE NO REPRESENTATION THAT THE SOFTWARE, MODIFICATIONS,
+## ENHANCEMENTS OR DERIVATIVE WORKS THEREOF, WILL NOT INFRINGE ANY
+## PATENT, COPYRIGHT, TRADEMARK, TRADE SECRET OR OTHER PROPRIETARY
+## RIGHT.
+##
+##***************************Copyright-DO-NOT-REMOVE-THIS-LINE**/
+
+
+
+###########################################################################
+#
+#  Runs a cluster of condor jobs, one process for each tarball on the command line.
+#  When ALL are finished, command exits with status 0.
+#
+#  usage: condor_tgz2adjacency <tarballs>
+#
+###########################################################################
+
+# we use tgz2adjacency.cmd as a template.
+
+# grab current working directory for initial dir in system using automounter
+$pwd = `pwd`;
+chomp $pwd;
+
+# check arguments
+if (!defined($ARGV[0]) || $ARGV[0] eq "-h" || $ARGV[0] eq "-help") {
+    print "usage: $0 <files>\n";
+    print "\twhere <files> is a lest of tarballs which need to be processed.\n";
+    exit 1;
+}
+
+# set up environment for running something in the current directory in case
+# they want to run something in the current working directory and they
+# don't specify a "./" infront of it.
+$ENV{'PATH'} .= ":.";
+
+# setup cleanup subroutine and error handlers
+sub cleanfiles {
+    unlink ".condor_run.$$", ".condor_submit.$$", ".condor_log.$$";
+    unlink ".condor_out.$$", ".condor_error.$$";
+}
+
+sub abort {
+    `condor_rm $cluster 2>&1 > /dev/null` if defined($cluster);
+    #&cleanfiles;
+    die @_;
+}
+
+sub handler {
+    local($sig) = @_;
+    &abort("Killed by SIG$sig.\n");
+}
+
+$SIG{'HUP'} = 'handler';
+$SIG{'INT'} = 'handler';
+$SIG{'QUIT'} = 'handler';
+$SIG{'TERM'} = 'handler';
+
+# use the user's shell in the script we submit to Condor
+$shell = $ENV{'SHELL'};
+$shell = "/bin/sh" if (!defined($shell));
+
+# create a job description file to submit the shell script to Condor
+`cp tgz2adjacency.cmd .condor_submit.$$`; 
+open(JDF, ">>.condor_submit.$$") ||
+    &abort("Can't create temporary (JDF) file in current directory.\n");
+#print JDF "universe = $universe\n";
+#print JDF "executable = .condor_run.$$\n";
+#print JDF "initialdir = $pwd\n";
+#print JDF "notification = NEVER\n";
+#print JDF "log = .condor_log.$$\n";
+#print JDF "output = .condor_out.$$\n";
+#print JDF "error = .condor_error.$$\n";
+#print JDF "getenv = True\n";
+#print JDF "requirements = ", $requirements, "\n" if (defined($requirements));
+#print JDF "queue\n";
+foreach $file (@ARGV) {
+    # here is where we check that this hasn't been done before...
+    $target = `basename $file`;
+    $target =~ s/\.tar\.gz/.union.good/;
+    next if (-s $target);
+    print JDF "arguments = $file\nqueue\n";
+} 
+close(JDF) ||
+    &abort("Failed to write temporary (JDF) file in current directory.\n");
+
+# submit the job; $cluster contains cluster number if successful
+open(SUBMIT, "condor_submit .condor_submit.$$ 2>&1 |") ||
+    &abort("Failed to run condor_submit.  Please check your path.\n");
+while(<SUBMIT>) {
+    if (/^\d+ job\(s\) submitted to cluster (\d+)./) {
+	($cluster) = $1;
+    } elsif (/WARNING/) {
+	&abort("Condor does not have write permission to this directory.\n") unless /NFS/;
+    } else {
+	$submit_errors .= $_;
+    }
+}
+close(SUBMIT) || 
+    &abort("Failed to run condor_submit.  Please check your path.\n");
+
+if (!defined($cluster)) {
+    print STDERR $submit_errors;
+    &abort("Failed to submit Condor job. Not cluster found.\n");
+}
+
+# watch the Condor log to see when the job completes
+$done = 0;
+$status = 0;
+$jobs = scalar @ARGV;
+while ($done < $jobs) {
+    sleep 5;
+    open(LOG, "<tgz2adjacency.log") ||
+    &abort("Failed to open Condor log file.\n");
+    while (<LOG>) {
+	if (/termination \(return value (\d+)\)/) {
+	    $status = $1;
+	    $done += 1;
+	} elsif (/termination \(signal (\d+)\)/) {
+	    print STDERR "Condor job killed by signal ", $1 , ".\n";
+	    $done += 1;
+        } elsif ( /^009/ && /Job was aborted by the user/ ) {
+	    print STDERR "DAGMan was aborted by the user";
+	    $done += 1;
+	}
+    }
+    close(LOG) || &abort("Failed to close Condor log file.\n");
+}
+undef $cluster;			# indicate that job is no longer in queue
+
+# &cleanfiles;			# cleanup temporary files
+
+# exit $status;			# exit with job's exit status

@@ -1,0 +1,5 @@
+*.diff
+*.adj
+*.model
+*.test.dlv
+.elog

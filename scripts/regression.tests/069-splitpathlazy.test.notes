@@ -1,0 +1,8 @@
+found gap(a,b) offby one error in gen_transitions.pl
+
+main problem here was that all probes after the lazy router
+had their probes incremented, including ones that took
+a different, shorter path.  PROBLEM: some of the probes that
+took a different shorter path came before the discovery of the
+lazy routers, and created wrong gaps.
+

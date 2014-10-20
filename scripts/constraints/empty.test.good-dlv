@@ -1,0 +1,3 @@
+Endhost E1 nAlly=1 128.8.126.69
+Source S2_N nAlly=1 128.208.4.199
+Link  S2_N:128.208.4.199 -- E1:128.8.126.69 : HIDDEN

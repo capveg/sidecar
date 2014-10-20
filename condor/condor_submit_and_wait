@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# sorry, I know ruby better.
+
+Usage = "Usage: condor_submit_and_wait inputtgzfile"
+
+raise Usage unless ARGV.length > 0 
+raise "that argument #{$ARGV[0]} doesn't look like a tgz file" unless ARGV[0] =~ /.gz$/
+raise "argument #{$ARGV[0]} doesn't exist" unless Kernel::test(?e, ARGV[0]) 
+
+InputDir = File.dirname(ARGV[0])
+raise "input file in nonexistent directory?" unless Kernel::test(?d, InputDir) 
+InputFile = File.basename(ARGV[0])
+raise "couldn't reconstruct filename" unless Kernel::test(?e, InputDir + '/' + InputFile) 
+OutputDir = InputDir + ".procesed"
+
+Dir.mkdir(OutputDir) unless Kernel::test(?d, OutputDir)
+Dir.mkdir(OutputDir + '/' + InputFile) unless Kernel::test(?d, OutputDir + '/' + InputFile)
+
+raise "couldn't make the output directory" unless Kernel::test(?d, OutputDir + '/' + InputFile) 
+
+commandone = "condor_submit -a OutputDir=%s -a InputDir=%s -a InputFile=%s /fs/sidecar/condor/tgz2adjacency-template.cmd" % [ OutputDir, InputDir, InputFile ]
+commandtwo = "condor_wait %s/%s/log" % [ OutputDir, InputFile]
+
+goodout = OutputDir + '/' + InputFile
+goodout.sub!(/tar\.gz/,"union.good")
+
+if Kernel::test(?s, goodout)
+	puts "Skipping: #{goodout} already processed"
+	exit 0
+else 	
+	puts "#{goodout} not found; submitting to condor"
+end
+
+$stderr.puts commandone
+if Kernel::system(commandone)  then
+    Kernel::system(commandtwo)   
+else    
+    raise "job submission failed" 
+end
+
+
+

@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+grep RECV $1 | sed -e 's/ROUTER.*rtt=[^ ]* s t=[^ ]*//' | sed -e s/Macro//g | sed -e 's/- RECV TTL /ttl /' | sed -e 's/ it.*=/,/' | sed -e 's/ from//g' | sort -nk2 | less

@@ -1,0 +1,4 @@
+'craziest trace EVAR'
+
+there is multipathing where one path is through a B router and the other is through an N+MPLS
+which causes the lazy router test to incorrectly succeed

@@ -1,0 +1,24 @@
+1) 1-byte sidecar probes generate dsack responses: http://www.faqs.org/rfcs/rfc2883.html
+
+
+
+	(16:12:07) nspring: currently active dsls are:
+	(16:12:30) nspring:            planetlab3-dsl.cs.cornell.edu 141.149.218.208     0.3.13 (us, na, NTP=NTP-stratum2)
+	planetlab4-dsl.cs.cornell.edu 141.149.218.209     0.3.13 (us, na, NTP=NTP-stratum2)
+	planetlab1.gti-dsl.nodes.planet-lab.org  208.216.119.19     0.3.14 (us, na, NTP=NTP-stratum2)
+planetlab-dsl-1.ucsd.edu   70.137.68.249     0.3.13 (us, na, NTP=NTP-stratum2)
+
+	(16:12:48) loopback: how are you getting this info?  scriptroute?
+	(16:12:56) nspring: planetlab3-dsl.cs.cornell.edu
+	planetlab4-dsl.cs.cornell.edu
+	planetlab1.gti-dsl.nodes.planet-lab.org
+	planetlab-dsl-1.ucsd.edu
+
+	(16:12:57) nspring: yeah.
+	(16:13:06) nspring: active scriptroute servers with reverse names that say dsl.
+	(16:13:11) nspring: might miss some that are up.
+	(16:13:17) nspring: but could start with those.
+	(16:13:52) loopback: are there quick steps for me to query scriptroute for active nodes so I can bug you less inthe future?
+	(16:13:56) nspring: sr-listservers.rb
+
+3) check out aladdin.planetlab.extranet.uni-passau.de.-1.out for why it went nuts

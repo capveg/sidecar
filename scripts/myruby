@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -x /usr/local/bin/ruby ] ; then
+	exec /usr/local/bin/ruby $@
+elif [ -x /usr/bin/ruby ] ; then
+	exec /usr/bin/ruby $@
+else
+	echo "No ruby found on `hostname`" | mail -s RUBYERROR capveg@cs.umd.edu
+fi

@@ -1,0 +1,73 @@
+193.1.201.27:57777-195.212.206.162:80 :: new connection: id = 93 time=1147905147.850916
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=0 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=1500000(1) time=1147905147.901994
+- RECV TTL 1 it=0 from     193.1.31.126 (255)	ROUTER	 rtt=0.000490 s t=1147905147.902520 RR,  Macro
+- RECV TTL 2 it=0 from    193.1.196.217 (254)	ROUTER	 rtt=0.000836 s t=1147905147.902894 RR, hop 1 193.1.196.218 ,  Macro
+- RECV TTL 3 it=0 from    193.1.195.137 (253)	ROUTER	 rtt=0.001572 s t=1147905147.903644 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 ,  Macro
+- RECV TTL 4 it=0 from     208.48.23.53 (252)	ROUTER	 rtt=0.002815 s t=1147905147.904898 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 ,  Macro
+- RECV TTL 5 it=0 from    195.66.224.27 (249)	ROUTER	 rtt=0.013793 s t=1147905147.915887 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 , hop 5 67.17.81.228 ,  Macro
+- -	timeout on RPT 0	6 probes outstanding time=1147905149.402623
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=1 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=1500000(1) time=1147905149.452758
+- RECV TTL 1 it=1 from     193.1.31.126 (255)	ROUTER	 rtt=0.000249 s t=1147905149.453037 Macro
+- RECV TTL 2 it=1 from    193.1.196.217 (254)	ROUTER	 rtt=0.000238 s t=1147905149.453050 Macro
+- RECV TTL 3 it=1 from    193.1.195.137 (253)	ROUTER	 rtt=0.000461 s t=1147905149.453286 Macro
+- RECV TTL 4 it=1 from     208.48.23.53 (251)	ROUTER	 rtt=0.000700 s t=1147905149.453537 Macro
+- RECV TTL 6 it=1 from    195.66.224.27 (249)	ROUTER	 rtt=0.010177 s t=1147905149.463034 Macro
+- RECV TTL 5 it=1 from      67.17.71.25 (249)	ROUTER	 rtt=0.010309 s t=1147905149.463156 Macro
+- RECV TTL 8 it=1 from    165.87.223.82 (247)	ROUTER	 rtt=0.010528 s t=1147905149.463406 Macro
+- RECV TTL 9 it=1 from   32.112.144.110 (247)	ROUTER	 rtt=0.014144 s t=1147905149.467032 Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=939524165.029906
+- -	timeout on RPT 1	3 probes outstanding time=1147905150.953521
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=2 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=1500000(1) time=1147905151.003624
+- RECV TTL 1 it=2 from     193.1.31.126 (255)	ROUTER	 rtt=0.000527 s t=1147905151.004178 RR,  Macro
+- RECV TTL 2 it=2 from    193.1.196.217 (254)	ROUTER	 rtt=0.000878 s t=1147905151.004553 RR, hop 1 193.1.196.218 ,  Macro
+- RECV TTL 3 it=2 from    193.1.195.137 (253)	ROUTER	 rtt=0.001493 s t=1147905151.005180 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 ,  Macro
+- RECV TTL 4 it=2 from     208.48.23.53 (252)	ROUTER	 rtt=0.002480 s t=1147905151.006178 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 ,  Macro
+- RECV TTL 5 it=2 from    195.66.224.27 (249)	ROUTER	 rtt=0.013087 s t=1147905151.016796 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 , hop 5 67.17.81.228 ,  Macro
+- -	timeout on RPT 2	6 probes outstanding time=1147905152.504338
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=3 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=1500000(1) time=1147905152.558418
+- RECV TTL 1 it=3 from     193.1.31.126 (255)	ROUTER	 rtt=0.000252 s t=1147905152.558694 Macro
+- RECV TTL 2 it=3 from    193.1.196.217 (254)	ROUTER	 rtt=0.000245 s t=1147905152.558702 Macro
+- RECV TTL 3 it=3 from    193.1.195.137 (253)	ROUTER	 rtt=0.000474 s t=1147905152.558943 Macro
+- RECV TTL 4 it=3 from     208.48.23.53 (251)	ROUTER	 rtt=0.000714 s t=1147905152.559194 Macro
+- RECV TTL 5 it=3 from      67.17.71.25 (249)	ROUTER	 rtt=0.010199 s t=1147905152.568690 Macro
+- RECV TTL 6 it=3 from    195.66.224.27 (249)	ROUTER	 rtt=0.010200 s t=1147905152.568701 Macro
+- RECV TTL 8 it=3 from    165.87.223.82 (247)	ROUTER	 rtt=0.010410 s t=1147905152.568937 Macro
+- RECV TTL 9 it=3 from   32.112.144.110 (247)	ROUTER	 rtt=0.014287 s t=1147905152.572827 Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=3 ignoring: t=939524165.038098
+- -	timeout on RPT 3	3 probes outstanding time=1147905154.059092
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=4 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=1500000(1) time=1147905154.109709
+- RECV TTL 1 it=4 from     193.1.31.126 (255)	ROUTER	 rtt=0.000474 s t=1147905154.110210 RR,  Macro
+- RECV TTL 2 it=4 from    193.1.196.217 (254)	ROUTER	 rtt=0.005076 s t=1147905154.114832 RR, hop 1 193.1.196.218 ,  Macro
+- RECV TTL 3 it=4 from    193.1.195.137 (253)	ROUTER	 rtt=0.005567 s t=1147905154.115334 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 ,  Macro
+- RECV TTL 4 it=4 from     208.48.23.53 (252)	ROUTER	 rtt=0.006680 s t=1147905154.116459 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 ,  Macro
+- RECV TTL 5 it=4 from    195.66.224.27 (249)	ROUTER	 rtt=0.017415 s t=1147905154.127205 RR, hop 1 193.1.196.218 , hop 2 193.1.195.136 , hop 3 208.48.23.54 , hop 4 67.17.80.156 , hop 5 67.17.81.228 ,  Macro
+- -	timeout on RPT 4	6 probes outstanding time=1147905155.610975
+193.1.201.27:57777-195.212.206.162:80 -	Sending train=5 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=1500000(1) time=1147905155.662066
+- RECV TTL 1 it=5 from     193.1.31.126 (255)	ROUTER	 rtt=0.000214 s t=1147905155.662351 Macro
+- RECV TTL 2 it=5 from    193.1.196.217 (254)	ROUTER	 rtt=0.000214 s t=1147905155.662362 Macro
+- RECV TTL 3 it=5 from    193.1.195.137 (253)	ROUTER	 rtt=0.000402 s t=1147905155.664349 Macro
+- RECV TTL 4 it=5 from     208.48.23.53 (251)	ROUTER	 rtt=0.000627 s t=1147905155.664599 Macro
+- RECV TTL 5 it=5 from      67.17.71.25 (249)	ROUTER	 rtt=0.010110 s t=1147905155.674094 Macro
+- RECV TTL 6 it=5 from    195.66.224.27 (249)	ROUTER	 rtt=0.010107 s t=1147905155.674102 Macro
+- RECV TTL 8 it=5 from    165.87.223.82 (247)	ROUTER	 rtt=0.010327 s t=1147905155.674343 Macro
+- RECV TTL 9 it=5 from   32.112.144.110 (247)	ROUTER	 rtt=0.014192 s t=1147905155.678218 Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=5 ignoring: t=939524165.047826
+- -	timeout on RPT 5	3 probes outstanding time=1147905157.162653
+TRANSITION: going from packet trains to traceroute probing
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=DATA phase=2 ttl=10 it=0 id=59910(1770) rto=1500000(1) time=1147905157.221733
+- -	timeout TTL 10 iteration=0	 time=1147905158.726606
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=DATA phase=2 ttl=10 it=1 id=60166(1771) rto=1500000(1) time=1147905158.777432
+- -	timeout TTL 10 iteration=1	 time=1147905160.278269
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=DATA phase=2 ttl=10 it=2 id=60422(1772) rto=1500000(1) time=1147905160.329280
+- -	timeout TTL 10 iteration=2	 time=1147905161.830011
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=DATA phase=2 ttl=10 it=3 id=60678(1773) rto=1500000(1) time=1147905161.880219
+193.1.201.27:57777-195.212.206.162:80 :: connection FIN closed: id = 93 : time connected 14.971030 time=1147905162.821982
+- -	timeout TTL 10 iteration=3	 time=1147905163.380789
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=FINACK phase=2 ttl=10 it=4 id=60934(1774) rto=1500000(1) time=1147905163.431790
+- -	timeout TTL 10 iteration=4	 time=1147905164.932566
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=FINACK phase=2 ttl=10 it=5 id=61190(1775) rto=1500000(1) time=1147905164.982995
+- -	timeout TTL 10 iteration=5	 time=1147905166.483354
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=FINACK phase=2 ttl=11 it=0 id=61446(1776) rto=1500000(1) time=1147905166.534348
+- RECV TTL 11 it?=0 from  195.212.206.162 (53)	ENDHOST	 rtt=0.014585 s t=1147905166.548952 TraceRoute?
+193.1.201.27:57777-195.212.206.162:80 -	Sending probe=FINACK phase=2 ttl=11 it=1 id=61702(1777) rto=1500000(1) time=1147905166.599355
+193.1.201.27:57777-195.212.206.162:80 :: finished=INCOMPLETE connection destroyed alive=18.763264 at time=1147905166.614216

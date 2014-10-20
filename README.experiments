@@ -1,0 +1,164 @@
+General:
+	1) ssh-add
+	2) make tar
+	3) base=`pwd`
+	4) mkdir run && cd run && set base=$HOME/swork/sidecar
+
+	For pl-all-pairs::
+	
+	5) $base/scripts/spawn -s -f $base/HOSTS -- "$base/scripts/install_run_and_snag.sh %%H ./run.sh urls.plab"
+
+	For larger runs (urls.good :: general internet)
+
+	5) $base/scripts/spawn -s -f $base/HOSTS -- "$base/scripts/install_and_run.sh %%H ./run.sh urls.good"
+	6) mkdir data &&  cd data &&  $base/scripts/loop_and_snag_all.sh HOSTS
+
+	For codeen:
+
+	5) $base/scripts/spawn -s -f $base/HOSTS.codeen -- "$base/scripts/codeen_install_and_run.sh %%H"
+	6) mkdir data &&  cd data &&  $base/scripts/loop_and_snag_all.sh HOSTS.codeen umd_sidecar
+
+	For random_probe runs for all address.24 
+
+	5) $base/scripts/spawn -s -f $base/HOSTS -- "$base/scripts/install_and_run.sh %%H ./run-rand.sh"
+	6) mkdir data &&  cd data &&  $base/scripts/loop_and_snag_all.sh HOSTS
+
+	For random_probe runs for just plab
+	5) $base/scripts/spawn -s -f $base/HOSTS -- "$base/scripts/install_run_and_snag.sh %%H ./run-rand.sh HOSTS.ip.stoplist"
+-----------------------------------------------------------------------
+Nice Properties:
+	- can get behind firewalls/nats, b/c the connection has already been initiated
+	- can detect firewalls/nats, even if box has default DENY policy
+	- can use rtt estimate information from traffic to set timeouts accordingly: faster than standard traceroute
+	- lower (no?) abuse complaints, b/c connection is solicited
+	- three types of probes: SYN|ACK, data, and FIN|ACK probes for various states of the connection
+	- can configure to only send traffic when stream is idle : non-interference
+	
+--------------------------------------------------------------------------------------------------------------------
+DESIGN DECISIONS:
+
+Desired property: implement traceroute in TCP stream without adversely affecting connection
+	- could send ACK packets with current tcp sequence
+	    Good:
+		- totally valid, always
+		- get ICMP time exceeded messages from routers
+	    Bad:
+		- when sent to end host, generates no response: need UDP-Port unreachable equivalent
+		- end host might do into fast-retransmit(?)
+	- could resend old, cached data
+	    Good:
+		- remote host will send ACK, indicating receipt
+	    Bad:
+		- too big: should be smaller 
+		- what if no old data is present?
+		- if we send too many old data packets to end-host, could cause local host to 
+			do fast-transmit(?)
+		- what if connection is closed before finished probe?
+	- could send last byte of old data
+	   Good: 
+		- quick, easy, low volume
+	   Bad:
+		- Some(?) connection tracking NATs get pissy and send ICMP_UNREACH_ANO or RST from random port(!)
+	   	- looks funny to send 1 byte of old data
+	- CURRENT ALG: send duplicate of last data packet or SYN-ACK if no data or FIN-ACK if closed; 
+		stop when we get duplicate ACK instead of Time-Exceeded
+	   Good: 
+	   	- solves all of above problems, except size, which isn't an issue
+	   Bad: 
+		- duplicate acks could be from other things
+			- just wait until we are idle to send
+			- closed connection == trivially idle
+Depth vs. Breadth:
+	- regular traceroute does:
+		for i=1 to maxttl
+			for j=1 to count
+				send probe
+	- Nspring [RocketFuel] says do reverse the for loops for better temporal correlations
+	- PROBLEM: we stop scanning as soon as we get a RST from other side,
+		so this is a trade off between good temporal data for more data
+		decide default is traceroute-style for loops ("breadth") but '-f' can
+		specify depth
+--------------------------------------------------------------------------------------------------------------------
+RTT estimation alg:
+	Issue:
+		timestamp tick in linux 2.4.x is 10ms, but 2.6.x is 1ms on ix86 -- weird
+		in general, it's an opaque value, so do this
+	Alg: 
+		when outgoing packet with timestamp is caught by pcap, record opaque value with
+		timestamp
+		watch for that same value to be returned in echo field, then match and output time diff
+
+--------------------------------------------------------------------------------------------------------------------
+NAT Detection:
+	if we get connection from x, but sending a limited ttl packet, we get an ICMP Time Exceeded from x, 
+		then x is a NAT keep inc'ing ttl to find y, the real host
+Firewall Detection:
+	send identd/port 113 connection request, and check to see if ttl of response is equal to ttl of
+	inital syn or acks -- if firewall drops packet, can do ttl limited identd lookup to find firewall
+--------------------------------------------------------------------------------------------------------------
+
+NOTES:
+
+AC_LBL_LIBPCAP in scriptroute/adt/tcpdump.m4 is possibly the correct macro...;   probably easy enough to embed an struct iphdr on arches that don't use it rather than retarget the other structure type.
+... and it's #define _BSD_SOURCE before features.h is included to get __USE_BSD defined.  (yes, I've looked into this before...)
+
+TIMESTAMPS symantics
+	http://www.freesoft.org/CIE/RFC/1323/10.htm [rfc1323 section 3.4]
+
+Once a connection is closed by the other side, further acks from the other side
+	generate RSTs :-(  Take home note: wait for client to FIN connection first.
+
+End-host detection only really works when connections are idle, which is trivially
+	true when connections are closed.
+
+Solaris doesn't send TCP timestamps in 3-way handshake, but Linux does
+	
+Data probe can ony be sent when connection is idle, b/c is sent concurrently with other data,
+	we will never get an ACK for it.  Idle means "no data outstanding" not just "hasn't
+	sent packets in a while".
+
+	Also, should send data probes one at a time?  An out of sequence data packet should
+	gen an immediate ACK (no ack delay), but it's hard to map ACKs to probes
+
+
+Reactions to types of connections:
+1) stealth scan: nothing; does not even call connectionCB
+2) connect scan, then RST (nmap): no data
+3) connect, then ignore: synack scan, good data except for last hop
+4) connect, get data, close: data scans, then FIN|ACK, everything but last hop
+5) connect, get data, idle wait: data scans... best case
+
+	
+Connect() Scan (nmap -sT)
+root@greeble:~/swork/sidecar/passenger# tcpdump -r t1 port 8080 or icmp
+15:40:36.177933 myleft.net.60228 > greeble.cs.umd.edu.webcache: S 24612616:24612616(0) win 5840 <mss 1460,sackOK,timestamp 227747143 0,nop,wscale 2> (DF)
+15:40:36.178023 greeble.cs.umd.edu.webcache > myleft.net.60228: S 988899418:988899418(0) ack 24612617 win 5792 <mss 1460,sackOK,timestamp 2357047483 227747143,nop,wscale 0> (DF)
+15:40:36.195302 myleft.net.60228 > greeble.cs.umd.edu.webcache: . ack 1 win 1460 <nop,nop,timestamp 227747148 2357047483> (DF)
+15:40:36.197583 myleft.net.60228 > greeble.cs.umd.edu.webcache: R 1:1(0) ack 1 win 1460 <nop,nop,timestamp 227747148 2357047483> (DF)
+
+
+SYN Scan (nmap -sS)
+root@greeble:~/swork/sidecar/passenger# tcpdump -r t1 port 8080 or icmp
+15:42:09.598794 myleft.net > greeble.cs.umd.edu: icmp: echo request
+15:42:09.598876 greeble.cs.umd.edu > myleft.net: icmp: echo reply
+15:42:09.722465 myleft.net.61032 > greeble.cs.umd.edu.webcache: S 2092741216:2092741216(0) win 3072
+15:42:09.722522 greeble.cs.umd.edu.webcache > myleft.net.61032: S 1095103991:1095103991(0) ack 2092741217 win 5840 <mss 1460> (DF)
+15:42:09.735723 myleft.net.61032 > greeble.cs.umd.edu.webcache: R 2092741217:2092741217(0) win 0 (DF)
+
+
+Weird MPLS(?) behavior:
+[source = planetlab03.cs.washington.edu, dst = planetlab1.arizona-gigapop.net.]
+206.207.248.34:80 RECV TTL 1 iteration=0 from    128.208.4.100 (255)    ROUTER   rtt=0.002625 s time=1146542070.682868 NOP,  Pollo
+206.207.248.34:80 RECV TTL 2 iteration=0 from   140.142.155.23 (254)    ROUTER   rtt=0.005017 s time=1146542070.685243 NOP, hop 1 140.142.155.15 ,  Pollo
+# transition from RRtype A to B
+206.207.248.34:80 RECV TTL 3 iteration=0 from    209.124.176.5 (253)    ROUTER   rtt=0.008294 s time=1146542070.688501 NOP, hop 1 140.142.155.15 , hop 2 209.124.176.23 , hop 3 209.124.178.5 ,  Pollo
+# still RRtype=B
+206.207.248.34:80 RECV TTL 4 iteration=0 from    198.32.180.64 (252)    ROUTER   rtt=0.011343 s time=1146542070.691532 NOP, hop 1 140.142.155.15 , hop 2 209.124.176.23 , hop 3 209.124.178.5 , hop 4 168.215.52.202 ,  Pollo
+# still RRtype=B
+206.207.248.34:80 RECV TTL 5 iteration=0 from    66.192.248.52 (251)    ROUTER   rtt=0.021454 s time=1146542070.701625 NOP, hop 1 140.142.155.15 , hop 2 209.124.176.23 , hop 3 209.124.178.5 , hop 4 168.215.52.202 , hop 5 66.192.248.12 ,
+  Pollo
+# this is where it's weird, b/c we are already B but we pick up 2 RR addrresses that look like they are connected
+206.207.248.34:80 RECV TTL 6 iteration=0 from   66.192.253.245 (249)    ROUTER   rtt=0.064917 s time=1146542070.745069 NOP, hop 1 140.142.155.15 , hop 2 209.124.176.23 , hop 3 209.124.178.5 , hop 4 168.215.52.202 , hop 5 66.192.248.12 ,
+   hop 6 168.215.52.207 , hop 7 168.215.52.208 ,  Pollo
+
+

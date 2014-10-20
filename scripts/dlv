@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ -z $SIDECARDIR ] ;  then 
+	SIDECARDIR=$HOME/swork/sidecar
+fi
+
+UNAME_S=`uname -s`
+
+TYPE=static
+# comment out to use production/standard dlv
+#TEST=-test
+
+if [ "X$1" = "X-odbc" ] ; then
+	TYPE=unixodbc
+	shift
+fi
+
+case "$UNAME_S" in 
+	Linux)
+		exec $SIDECARDIR/scripts/dlv.i386-linux-elf-$TYPE.bin$TEST $@
+		;;
+	*)
+		echo Unknown OS: edit $0 to fix
+		exit 1
+		;;
+esac

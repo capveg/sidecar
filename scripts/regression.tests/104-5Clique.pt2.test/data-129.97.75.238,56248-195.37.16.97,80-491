@@ -1,0 +1,172 @@
+129.97.75.238:56248-195.37.16.97:80 :: new connection: id = 491 time=1174411215.436181
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=0 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(1) time=1174411216.861097
+- -	timeout on RPT 0	11 probes outstanding time=1174411221.861425
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=1 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(1) time=1174411221.912392
+- RECV TTL 1 it=0 from      129.97.75.1 (128)	ROUTER	 rtt=1.255004 s t=1174411223.057612 RR, hop 1 129.97.10.93 ,  Macro
+- RECV TTL 2 it=0 from      129.97.10.3 (254)	ROUTER	 rtt=1.256745 s t=1174411223.059362 RR, hop 1 129.97.10.93 ,  Macro
+- RECV TTL 3 it=0 from      66.97.23.33 (253)	ROUTER	 rtt=1.229360 s t=1174411223.059858 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 ,  Macro
+- RECV TTL 4 it=0 from      66.97.16.22 (252)	ROUTER	 rtt=1.231728 s t=1174411223.062242 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 ,  Macro
+- RECV TTL 5 it=0 from      66.97.16.30 (251)	ROUTER	 rtt=1.233458 s t=1174411223.063981 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 ,  Macro
+- RECV TTL 6 it=0 from     66.97.16.125 (250)	ROUTER	 rtt=1.234449 s t=1174411223.064980 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 ,  Macro
+- RECV TTL 7 it=0 from   205.189.32.214 (249)	ROUTER	 rtt=1.235815 s t=1174411223.066353 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 ,  Macro
+- RECV TTL 8 it=0 from    62.40.124.221 (248)	ROUTER	 rtt=1.247714 s t=1174411223.078259 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 ,  Macro
+- RECV TTL 9 it=0 from    62.40.112.133 (247)	ROUTER	 rtt=1.334494 s t=1174411223.165046 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- RECV TTL 11 it=0 from     62.40.124.34 (245)	ROUTER	 rtt=1.233498 s t=1174411223.183040 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- RECV TTL 10 it=0 from     62.40.112.57 (246)	ROUTER	 rtt=1.414564 s t=1174411223.245123 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=2 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(1) time=1174411223.296250
+- -	timeout on RPT 1	11 probes outstanding time=1174411226.912865
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=3 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(1) time=1174411226.963824
+- -	timeout on RPT 2	11 probes outstanding time=1174411228.296699
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=4 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(1) time=1174411228.347722
+129.97.75.238:56248-195.37.16.97:80 :: connection FIN closed: id = 491 : time connected 13.410510 time=1174411228.846698
+- RECV TTL 1 it=1 from      129.97.75.1 (128)	ROUTER	 rtt=0.951888 s t=1174411230.017489 Macro
+- RECV TTL 2 it=1 from      129.97.10.3 (254)	ROUTER	 rtt=0.952505 s t=1174411230.018113 Macro
+- RECV TTL 3 it=1 from      66.97.23.33 (253)	ROUTER	 rtt=0.952745 s t=1174411230.018363 Macro
+- RECV TTL 4 it=1 from      66.97.16.22 (252)	ROUTER	 rtt=0.797131 s t=1174411230.019860 Macro
+- RECV TTL 5 it=1 from      66.97.16.30 (251)	ROUTER	 rtt=0.798625 s t=1174411230.021367 Macro
+- RECV TTL 6 it=1 from     66.97.16.125 (249)	ROUTER	 rtt=0.799364 s t=1174411230.022114 Macro
+- RECV TTL 7 it=1 from   205.189.32.214 (248)	ROUTER	 rtt=0.799978 s t=1174411230.022735 Macro
+- RECV TTL 8 it=1 from    62.40.124.221 (247)	ROUTER	 rtt=0.810466 s t=1174411230.033229 Macro
+- RECV TTL 10 it=1 from     62.40.112.57 (245)	ROUTER	 rtt=0.910267 s t=1174411230.133046 Macro
+- RECV TTL 11 it=1 from     62.40.124.34 (245)	ROUTER	 rtt=0.998081 s t=1174411230.220868 Macro
+- -	timeout on RPT 3	11 probes outstanding time=1174411231.964261
+129.97.75.238:56248-195.37.16.97:80 -	Sending train=5 type=FINACK safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(1) time=1174411232.015277
+- RECV TTL 1 it=2 from      129.97.75.1 (128)	ROUTER	 rtt=1.566018 s t=1174411232.914401 RR, hop 1 129.97.10.93 ,  Macro
+- RECV TTL 2 it=2 from      129.97.10.3 (254)	ROUTER	 rtt=1.573506 s t=1174411232.921898 RR, hop 1 129.97.10.93 ,  Macro
+- RECV TTL 3 it=2 from      66.97.23.33 (253)	ROUTER	 rtt=1.573994 s t=1174411232.922394 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 ,  Macro
+- RECV TTL 4 it=2 from      66.97.16.22 (252)	ROUTER	 rtt=1.574111 s t=1174411232.922518 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 ,  Macro
+- RECV TTL 5 it=2 from      66.97.16.30 (251)	ROUTER	 rtt=1.575477 s t=1174411232.923893 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 ,  Macro
+- RECV TTL 6 it=2 from     66.97.16.125 (250)	ROUTER	 rtt=1.576219 s t=1174411232.924643 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 ,  Macro
+- RECV TTL 7 it=2 from   205.189.32.214 (249)	ROUTER	 rtt=1.577086 s t=1174411232.925518 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 ,  Macro
+- RECV TTL 8 it=2 from    62.40.124.221 (248)	ROUTER	 rtt=1.534561 s t=1174411232.946006 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 ,  Macro
+- RECV TTL 9 it=2 from    62.40.112.133 (247)	ROUTER	 rtt=1.673467 s t=1174411233.084926 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- RECV TTL 10 it=2 from     62.40.112.57 (246)	ROUTER	 rtt=1.681580 s t=1174411233.093048 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- RECV TTL 11 it=2 from     62.40.124.34 (245)	ROUTER	 rtt=1.684194 s t=1174411233.095670 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+TRANSITION: going from packet trains to traceroute probing
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=0 id=58360(63715) rto=5000000(1) time=1174411233.147151
+- -	timeout on RPT 4	-1 probes outstanding time=1174411233.348228
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=1 id=58616(63716) rto=5000000(1) time=1174411233.398328
+- -	timeout on RPT 5	-1 probes outstanding time=1174411237.015675
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=2 id=58872(63717) rto=5000000(1) time=1174411237.066665
+WEIRD: random probe-looking id 63682: it=3 probe_num=0
+WEIRD: random probe-looking id 63683: it=3 probe_num=1
+WEIRD: random probe-looking id 63684: it=3 probe_num=2
+WEIRD: random probe-looking id 63685: it=3 probe_num=3
+WEIRD: random probe-looking id 63686: it=3 probe_num=4
+WEIRD: random probe-looking id 63687: it=3 probe_num=5
+WEIRD: random probe-looking id 63688: it=3 probe_num=6
+WEIRD: random probe-looking id 63689: it=3 probe_num=7
+WEIRD: random probe-looking id 63690: it=3 probe_num=8
+WEIRD: random probe-looking id 63691: it=3 probe_num=9
+WEIRD: random probe-looking id 63692: it=3 probe_num=10
+- -	timeout TTL 12 iteration=0	 time=1174411238.147567
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=3 id=59128(63718) rto=5000000(1) time=1174411238.198552
+- UNSENT TTL 1 it=3 from      129.97.75.1 (128)	ROUTER	 NO MATCH t=1174411238.241995 Macro
+- UNSENT TTL 2 it=3 from      129.97.10.3 (254)	ROUTER	 NO MATCH t=1174411238.248741 Macro
+- UNSENT TTL 3 it=3 from      66.97.23.33 (253)	ROUTER	 NO MATCH t=1174411238.248867 Macro
+- UNSENT TTL 4 it=3 from      66.97.16.22 (252)	ROUTER	 NO MATCH t=1174411238.304709 Macro
+- UNSENT TTL 5 it=3 from      66.97.16.30 (251)	ROUTER	 NO MATCH t=1174411238.305833 Macro
+- UNSENT TTL 6 it=3 from     66.97.16.125 (249)	ROUTER	 NO MATCH t=1174411238.305958 Macro
+- UNSENT TTL 7 it=3 from   205.189.32.214 (248)	ROUTER	 NO MATCH t=1174411238.306457 Macro
+- UNSENT TTL 8 it=3 from    62.40.124.221 (247)	ROUTER	 NO MATCH t=1174411238.316576 Macro
+- -	timeout TTL 12 iteration=1	 time=1174411238.398517
+- UNSENT TTL 9 it=3 from    62.40.112.133 (246)	ROUTER	 NO MATCH t=1174411238.403900 Macro
+- UNSENT TTL 10 it=3 from     62.40.112.57 (245)	ROUTER	 NO MATCH t=1174411238.411271 Macro
+- UNSENT TTL 11 it=3 from     62.40.124.34 (245)	ROUTER	 NO MATCH t=1174411238.411395 Macro
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=4 id=59384(63719) rto=5000000(1) time=1174411238.451805
+WEIRD: random probe-looking id 63693: it=4 probe_num=0
+WEIRD: random probe-looking id 63694: it=4 probe_num=1
+WEIRD: random probe-looking id 63695: it=4 probe_num=2
+WEIRD: random probe-looking id 63696: it=4 probe_num=3
+WEIRD: random probe-looking id 63697: it=4 probe_num=4
+WEIRD: random probe-looking id 63698: it=4 probe_num=5
+WEIRD: random probe-looking id 63699: it=4 probe_num=6
+WEIRD: random probe-looking id 63700: it=4 probe_num=7
+WEIRD: random probe-looking id 63701: it=4 probe_num=8
+WEIRD: random probe-looking id 63702: it=4 probe_num=9
+WEIRD: random probe-looking id 63703: it=4 probe_num=10
+- UNSENT TTL 1 it=4 from      129.97.75.1 (128)	ROUTER	 NO MATCH t=1174411240.022445 RR, hop 1 129.97.10.93 ,  Macro
+- UNSENT TTL 2 it=4 from      129.97.10.3 (254)	ROUTER	 NO MATCH t=1174411240.022946 RR, hop 1 129.97.10.93 ,  Macro
+- UNSENT TTL 3 it=4 from      66.97.23.33 (253)	ROUTER	 NO MATCH t=1174411240.023066 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 ,  Macro
+- UNSENT TTL 4 it=4 from      66.97.16.22 (252)	ROUTER	 NO MATCH t=1174411240.024190 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 ,  Macro
+- UNSENT TTL 5 it=4 from      66.97.16.30 (251)	ROUTER	 NO MATCH t=1174411240.025815 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 ,  Macro
+- UNSENT TTL 6 it=4 from     66.97.16.125 (250)	ROUTER	 NO MATCH t=1174411240.027189 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 ,  Macro
+- UNSENT TTL 7 it=4 from   205.189.32.214 (249)	ROUTER	 NO MATCH t=1174411240.115017 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 ,  Macro
+- UNSENT TTL 8 it=4 from    62.40.124.221 (248)	ROUTER	 NO MATCH t=1174411240.125761 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 ,  Macro
+- UNSENT TTL 9 it=4 from    62.40.112.133 (247)	ROUTER	 NO MATCH t=1174411240.213206 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- UNSENT TTL 10 it=4 from     62.40.112.57 (246)	ROUTER	 NO MATCH t=1174411240.220949 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- UNSENT TTL 11 it=4 from     62.40.124.34 (245)	ROUTER	 NO MATCH t=1174411240.221824 RR, hop 1 129.97.10.93 , hop 2 66.97.23.34 , hop 3 66.97.16.21 , hop 4 66.97.16.29 , hop 5 66.97.16.126 , hop 6 205.189.32.213 , hop 7 205.189.32.46 , hop 8 62.40.112.134 , hop 9 62.40.112.58 ,  Macro
+- -	timeout TTL 12 iteration=2	 time=1174411242.067093
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=12 it=5 id=59640(63720) rto=5000000(1) time=1174411242.117115
+WEIRD: random probe-looking id 63704: it=5 probe_num=0
+WEIRD: random probe-looking id 63705: it=5 probe_num=1
+WEIRD: random probe-looking id 63706: it=5 probe_num=2
+WEIRD: random probe-looking id 63707: it=5 probe_num=3
+WEIRD: random probe-looking id 63708: it=5 probe_num=4
+WEIRD: random probe-looking id 63709: it=5 probe_num=5
+WEIRD: random probe-looking id 63710: it=5 probe_num=6
+WEIRD: random probe-looking id 63711: it=5 probe_num=7
+WEIRD: random probe-looking id 63712: it=5 probe_num=8
+WEIRD: random probe-looking id 63713: it=5 probe_num=9
+WEIRD: random probe-looking id 63714: it=5 probe_num=10
+- -	timeout TTL 12 iteration=3	 time=1174411243.199014
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=0 id=59896(63721) rto=5000000(1) time=1174411243.254275
+WEIRD: random probe-looking id 63715: it=0 probe_num=12
+- -	timeout TTL 12 iteration=4	 time=1174411243.451935
+- UNSENT TTL 1 it=5 from      129.97.75.1 (128)	ROUTER	 NO MATCH t=1174411243.490389 Macro
+- UNSENT TTL 2 it=5 from      129.97.10.3 (254)	ROUTER	 NO MATCH t=1174411243.490887 Macro
+- UNSENT TTL 4 it=5 from      66.97.16.22 (252)	ROUTER	 NO MATCH t=1174411243.492263 Macro
+- UNSENT TTL 5 it=5 from      66.97.16.30 (251)	ROUTER	 NO MATCH t=1174411243.493387 Macro
+- UNSENT TTL 6 it=5 from     66.97.16.125 (249)	ROUTER	 NO MATCH t=1174411243.494761 Macro
+- UNSENT TTL 7 it=5 from   205.189.32.214 (248)	ROUTER	 NO MATCH t=1174411243.494886 Macro
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=1 id=60152(63722) rto=5000000(1) time=1174411243.501984
+- UNSENT TTL 3 it=5 from      66.97.23.33 (253)	ROUTER	 NO MATCH t=1174411243.503631 Macro
+- UNSENT TTL 8 it=5 from    62.40.124.221 (247)	ROUTER	 NO MATCH t=1174411243.505135 Macro
+WEIRD: random probe-looking id 63716: it=1 probe_num=12
+- UNSENT TTL 9 it=5 from    62.40.112.133 (246)	ROUTER	 NO MATCH t=1174411243.592346 Macro
+- UNSENT TTL 11 it=5 from     62.40.124.34 (245)	ROUTER	 NO MATCH t=1174411243.600826 Macro
+- OLD TTL 12 it=0 from    188.1.145.190 (239)	ROUTER	 NO MATCH t=1174411244.310029 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+- OLD TTL 12 it=1 from    188.1.145.190 (239)	ROUTER	 NO MATCH t=1174411244.517531 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+WEIRD: random probe-looking id 63717: it=2 probe_num=12
+WEIRD: random probe-looking id 63718: it=3 probe_num=12
+WEIRD: random probe-looking id 63719: it=4 probe_num=12
+- OLD TTL 12 it=2 from    188.1.145.190 (239)	ROUTER	 NO MATCH t=1174411246.165181 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+- OLD TTL 12 it=3 from    188.1.145.190 (239)	ROUTER	 NO MATCH t=1174411246.496861 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+- OLD TTL 12 it=4 from    188.1.145.190 (239)	ROUTER	 NO MATCH t=1174411246.589429 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+- -	timeout TTL 12 iteration=5	 time=1174411247.117726
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=2 id=60408(63723) rto=5000000(1) time=1174411247.168569
+- OLD TTL 12 it=5 from    188.1.145.190 (239)	ROUTER	 rtt=0.769406 s t=1174411247.360598 MPLS,l=16043,CoS=0,ttl=255,S=1, TraceRoute
+- RECV TTL 13 it=0 from     188.1.145.54 (240)	ROUTER	 rtt=0.666582 s t=1174411247.482401 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=3 id=60664(63724) rto=5000000(1) time=1174411247.540504
+- RECV TTL 13 it=1 from     188.1.145.54 (240)	ROUTER	 rtt=0.661290 s t=1174411247.564977 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=4 id=60920(63725) rto=5000000(1) time=1174411247.615255
+- RECV TTL 13 it=2 from     188.1.145.54 (240)	ROUTER	 rtt=0.729270 s t=1174411248.082796 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=13 it=5 id=61176(63726) rto=5000000(1) time=1174411248.135733
+- RECV TTL 13 it=3 from     188.1.145.54 (240)	ROUTER	 rtt=0.729980 s t=1174411248.270563 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+- RECV TTL 13 it=4 from     188.1.145.54 (240)	ROUTER	 rtt=0.666905 s t=1174411248.282177 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=14 it=1 id=61432(63727) rto=5000000(1) time=1174411248.335209
+- RECV TTL 13 it=5 from     188.1.145.54 (240)	ROUTER	 rtt=0.384355 s t=1174411248.520162 MPLS,l=578,CoS=0,ttl=1,S=1, TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=14 it=2 id=61688(63728) rto=5000000(1) time=1174411248.570233
+- RECV TTL 14 it=1 from     188.1.145.73 (242)	ROUTER	 rtt=0.366047 s t=1174411248.701305 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=14 it=3 id=61944(63729) rto=5000000(1) time=1174411248.754527
+- RECV TTL 14 it=2 from     188.1.145.73 (242)	ROUTER	 rtt=0.277076 s t=1174411248.847344 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=14 it=4 id=62200(63730) rto=5000000(1) time=1174411248.898331
+- RECV TTL 14 it=3 from     188.1.145.73 (242)	ROUTER	 rtt=0.276661 s t=1174411249.031239 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=14 it=5 id=62456(63731) rto=5000000(1) time=1174411249.081381
+- RECV TTL 14 it=4 from     188.1.145.73 (242)	ROUTER	 rtt=0.252573 s t=1174411249.150922 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=0 id=62712(63732) rto=5000000(1) time=1174411249.201355
+- RECV TTL 14 it=5 from     188.1.145.73 (242)	ROUTER	 rtt=0.158319 s t=1174411249.239736 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=1 id=62968(63733) rto=5000000(1) time=1174411249.292729
+- RECV TTL 15 it=0 from     188.1.36.162 (241)	ROUTER	 rtt=0.169261 s t=1174411249.370658 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=2 id=63224(63734) rto=5000000(1) time=1174411249.421282
+- RECV TTL 15 it=2 from     188.1.36.162 (241)	ROUTER	 rtt=0.215945 s t=1174411249.637252 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=3 id=63480(63735) rto=5000000(1) time=1174411249.690249
+- RECV TTL 15 it=3 from     188.1.36.162 (241)	ROUTER	 rtt=0.216646 s t=1174411249.906970 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=4 id=63736(63736) rto=5000000(1) time=1174411249.962278
+- RECV TTL 15 it=4 from     188.1.36.162 (241)	ROUTER	 rtt=0.242071 s t=1174411250.204437 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=15 it=5 id=63992(63737) rto=5000000(1) time=1174411250.259187
+- RECV TTL 15 it=5 from     188.1.36.162 (241)	ROUTER	 rtt=0.130086 s t=1174411250.389306 TraceRoute
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=16 it=0 id=64248(63738) rto=5000000(1) time=1174411250.443197
+- RECV TTL 16 it?=0 from     195.37.16.97 (49)	ENDHOST	 rtt=0.129419 s t=1174411250.572696 TraceRoute?
+129.97.75.238:56248-195.37.16.97:80 -	Sending probe=FINACK phase=2 ttl=16 it=1 id=64504(63739) rto=5000000(1) time=1174411250.623672
+129.97.75.238:56248-195.37.16.97:80 :: finished=INCOMPLETE connection destroyed alive=35.358272 at time=1174411250.794460

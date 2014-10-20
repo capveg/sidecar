@@ -1,0 +1,12 @@
+doesn't look like we get hung up with the stupid router (do we?)
+but we do get screwed by layer2 flapping
+
+this trace is just a mess :-(
+
+some false aliases that need to be fixed but I don't know how:
+
+capveg@scriptroute:~> sr-ally 63.211.169.157 4.68.100.4
+NOT ALIAS. quick (2): 63283, 13026
+
+but most things just don't repond :-(
+

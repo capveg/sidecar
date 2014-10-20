@@ -1,0 +1,75 @@
+ - weird RR behaviors
+ 	- "A" behavior -- 	Cisco
+		- MPLS enabled routers don't add RR for outgoing MPLS connections
+	- "B" behavior --	"Juniper" ?
+			- add outgoing interface even if packet is bounced
+	- "stupid" behavior : don't bounce RR packets, bounce non-rr packets
+		mark RR packets on outgoing packets
+		examples: 216.24.186.{4,6,33} from uw to cornell
+		OrgName:    National LambdaRail, IndianaU ?? http://www.nlr.net/
+		explanation: firewall blocking icmp bounce > 48 bytes?
+			- use id increment rate to verify
+	- "flakey" behavior: sometime mark RR packets, sometimes not
+		Cisco under load?
+	- "DropsRR" 
+		- won't let packets with RR pass by
+
+- apply the "off by one" network alias connection rule
+
+
+ - some planetlab systems calls take >1 sec to complete
+
+ - some weird middle boxes uncheck DF bit, screws up optimization
+
+#################################################################
+Problematic Trace
+
+ttl 	nRR entries	RRtype	Inference source
+-----------------------------------------------
+1	0		A	2 is not type B (#2:beta)
+2	1		A	3 has +2 entries  (#1:alpha)
+3	3		B	+2  --> always B (#0:alpha)
+4	3		A	5 is +2: (#4:beta)
+5 	5		B	+2  --> always B (#3:alpha)
+6	5		N	+0,+0 --> (#5:gamma)
+7	5		A/N
+8	6		N/B
+9	6		A	in/new hop off by 1: (#7:epsilon)
+10 	7		A	in/new hop off by 1: (#6:epsilon)
+11	8		A	10 is A (#8,beta)
+
+
+
+
+
+
+Rules:
+	Rule alpha: 	+2 from prev --> you are B and prev is A
+	Rule beta : 	+1 from prev --> you are B and prev is N or B
+				-OR- you are A or N and prev is A 
+	Rule gamma: 	+0 from prev --> you are A or N and prev is N or B
+	Rule delta: 	if you are +0 and next is +0, you are N
+	Rule epsilon: 	if +1 and inhop ip and new RR hop ip are off by 1, then you are A and prev is A
+	Rule zeta: 	if out of band ping shows RR, then not N
+	Rule eta: 	are inhop and new RR hop alises?  yes, then B, no then A or N
+	GUESS: 
+		g = nRR entries + #N's upstream: 
+		- if g == ttl, then B
+		- if g == ttl-1
+
+Further note:
+	a sequence of 0,1,2,3,4,5,6,7,8,9 nRR's is indeterminant:
+	if could be all A's  or  N,B,B,B...
+-----------------------------------------------------------------------------------------------
+Calc queue size as a function of min delay: 
+	say average packet is 80 bytes, then if we are going at b Bytes/s,
+	then max queue size should be b/80 or 500kbps --> 64000/80 == 800 packets
+--------------------------------------------------------------------------------------------
+MPLS stuff:
+
+Cisco explanation:  `no mpls ip propagate-ttl` 
+	http://www.cisco.com/en/US/tech/tk436/tk428/technologies_tech_note09186a008020a42a.shtml
+Good MPLS tutorial:
+	http://www.iec.org/online/tutorials/mpls/topic03.html
+Can also get MPLS info from ping: 
+"MPLS OAM Tools for Troubleshooting MPLS Networks" http://www.cisco.com/application/pdf/en/us/guest/netsol/ns172/c654/cdccont_0900aecd80272b7f.pdf

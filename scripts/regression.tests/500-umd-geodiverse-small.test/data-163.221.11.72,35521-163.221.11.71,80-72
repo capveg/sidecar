@@ -1,0 +1,46 @@
+163.221.11.72:35521-163.221.11.71:80 :: new connection: id = 72 time=1181500351.330927
+163.221.11.72:35521-163.221.11.71:80 -	Sending train=0 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(2) time=1181500351.391021
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209987
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209990
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209990
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=1358954575.4209990
+- -	timeout on RPT 0	11 probes outstanding time=1181500356.391040
+163.221.11.72:35521-163.221.11.71:80 -	Sending train=1 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(3) time=1181500356.442091
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=687865925.4210001
+- -	timeout on RPT 1	11 probes outstanding time=1181500361.442111
+163.221.11.72:35521-163.221.11.71:80 -	Sending train=2 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(3) time=1181500361.493149
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210009
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210012
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210012
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=1358954575.4210012
+163.221.11.72:35521-163.221.11.71:80 :: connection FIN closed: id = 72 : time connected 14.999352 time=1181500366.330286
+- -	timeout on RPT 2	11 probes outstanding time=1181500366.493188
+163.221.11.72:35521-163.221.11.71:80 -	Sending train=3 type=FINACK safettl=11 nProbes=11 payload=-1 RR=0 rto=3855170(4) time=1181500366.544215
+BAD: got a probe response from ENDHOST: ttl=1 it=3 ignoring: t=671088709.4210023
+- -	timeout on RPT 3	11 probes outstanding time=1181500370.399470
+163.221.11.72:35521-163.221.11.71:80 -	Sending train=4 type=FINACK safettl=11 nProbes=11 payload=-1 RR=1 rto=3855170(4) time=1181500370.450479
+163.221.11.72:35521-163.221.11.71:80 :: finished=INCOMPLETE connection destroyed alive=19.121016 at time=1181500370.451950

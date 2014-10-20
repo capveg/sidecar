@@ -1,0 +1,25 @@
+############ To include into all makefiles
+CTAGS=ctags
+CFLAGS+=-Wall -Wpointer-arith -Wshadow 
+
+ifneq ($(shell uname -m),x86_64)
+CFLAGS+=-Werror
+endif
+
+CFLAGS+=-g
+LDFLAGS+=-g
+#LDFLAGS+=-lefence -Wl,-rpath=.
+#CFLAGS+=-pg
+#LDFLAGS+=-pg
+CC=gcc
+CXX=g++
+LD=ld
+VPATH=.
+GTAR=tar
+
+
+
+# Comands
+
+AR=ar
+RANLIB=ranlib

@@ -1,0 +1,25 @@
+level3 multipath at hop seven might confuse.
+
+tr source is-not-an-alias-for rr(trace, 2, ip), likely a needed rule.
+
+should be able to infer hop 6 is type B (AABBABB), 
+
+hop 8 is likely type B (off by one 222 /221) - works in the
+implementation when testing.
+
+doesn't merge all the car3.LosAngeles1's (4.68.102.14,
+4.68.102.78, 4.68.102.174, 4.68.110.221, 4.68.102.110)
+though I'm not disappointed.
+
+mistakenly (atm) merges 209.247.8.24[12] with
+4.68.105.{135,129}, which themselves shouldn't be merged.
+hop 6 says 4.68.105.219 can't be an alias for 4.68.105.135,
+which is rr(trace, *2*, ...).  and 242 can't be an alias for
+135, again, in the same rr line.
+
+
+---------------
+Wed Dec 13 18:14:58 EST 2006
+---------------
+
+Autogen transitions fixed some problems; still contains stupid routers at bbr{1,2} in Level3

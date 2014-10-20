@@ -1,0 +1,8 @@
+../diffadj.pl base.test.good base.test.good-dlv
+REMOVING LINK 198.32.8.84 198.32.8.85 RR
+ADDING LINK 198.32.8.83 198.32.8.85 TR
+
+The out going link of a final B router should be RR not, TR, but is probably okay for
+now.  Trying to add it to DLV seems nontrivial and costly.
+
+

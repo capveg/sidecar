@@ -1,0 +1,10 @@
+1) generate data via README.experiments
+2) input data into database with tgz2db.sh and data2db.sh
+3) $base/condor/condorSolve.rb -allCliques
+4) find $base/run/alltraces -name \*.model | unionModels.pl cliques -
+5) $base/condor/condorSolve.rb -resolveAll $base/run/alltraces/cliques.conflict-debug
+6) $base/condor/condorSolve.rb -resolveAllHints $base/run/alltraces/cliques.conflict-debug $base/run/alltraces/clique.hints-resolve
+7) $base/condor/condorSolve.rb -solveAll
+8) find $base/run/alltraces -name \*.model | unionModels.pl all -
+9) $base/condor/condorSolve.rb -resolveAll $base/run/alltraces/all.conflict-debug
+10) $base/condor/condorSolve.rb -resolveAllHints $base/run/alltraces/all.conflict-debug $base/run/alltraces/all.hints-resolve

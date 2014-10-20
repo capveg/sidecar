@@ -1,0 +1,4 @@
+looks like the lazy router and the lack of probes from it are causing
+problems.  Short of getting some aliases from external sources there,
+I don't think we're going to be able to solve this correctly, but I am
+moderately confident that one of the models is the correct one.

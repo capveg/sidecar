@@ -1,0 +1,4 @@
+snagged (by hand!) from http://routerproxy.grnoc.iu.edu/nlr2/ on 1/14/2008
+
+for some reason, all of these routers *share* 216.24.191.254 as an internal loopback IP; BROKEN!
+	Just removed by hand from the .dlv file rather then break the script

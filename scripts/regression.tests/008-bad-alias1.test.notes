@@ -1,0 +1,11 @@
+from uw planetlab data set
+	129.250.0.1 gets incorrectly assigned to 129.250.5.48
+	b/c we prefer A->N transitions over N->B (do we?)
+
+UPDATE:
+Thu Dec 14 17:33:28 EST 2006
+
+Fixed that problem -- in one model, but we are outputing a wrong
+model of similar cost.  Added .notes-good as the correct version.
+
+

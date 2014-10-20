@@ -1,0 +1,24 @@
+Andrew Goldberg's max-flow code:
+types.h
+timer.c
+hi_pr.c
+parser.c
+makefile
+
+Modified unDNS:
+originForIP
+originForIP.c
+Modified to construct the data structure, then continuously read IP addrs from
+stdin, outputting their AS.
+
+preprocess.rb : takes a file in capveg format and translates it to
+a format with just edges.  Output can then be run by run_max_flow.rb.
+Expects the modified "originForIP" to be in the local directory.
+
+run_max_flow.rb : see above.  Runs Goldberg's max flow on all "AS*" pairs
+in the input file, and outputs the max flow = number of disjoint paths between
+each AS.  Expects "hi_pr" to be an executable in the local directory.
+
+loop_analyze.rb : process output traces to see which contain loops
+
+loop_get_stats.rb : output various stats about loops, the routers in loops, their AS, etc.

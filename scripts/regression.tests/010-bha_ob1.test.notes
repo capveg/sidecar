@@ -1,0 +1,6 @@
+.49/136 is a b, then .170 or .169 apear hidden, then
+.53/.49/.138 is an A, off by one .137.
+
+it's possible this one shouldn't be resolved at the
+individual trace level, though likely adjusting weights
+would put it into place (and maybe cause other trouble).

@@ -1,0 +1,5 @@
+hop 3 is still hosed; it looks like layer2 flapping is causing routers to get merged
+data2dlv detects layer2 stuff, but the dlv code doesn't correctly deal with it
+
+also: ally reports that 129.250.11.157 129.250.0.1 are NOT aliases, but they really look
+like them... need to investigate further.

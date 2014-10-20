@@ -1,0 +1,25 @@
+- do sidecar and tcp stuff in one thread
+
+1) spawn n grabber threads
+2) run sc_do_loop()
+3) For each grabber thread:
+	sleep(1)	// let sidecar init
+	while(sites exist)
+		grab new site
+		connect
+		send request
+		parse response
+		(repeat until enough data has been sent)
+		wait for signal
+		on signal, shutdown connection
+4) on connect, 
+	schedule idle
+5) if idle, and enough data has been sent,
+	send packet train of length $safelen
+	on done, signal thread
+6) on icmp in, record data
+7) on in packet, signal got response from endhost
+	on done, signal thread
+8) on outpacket, record timestamp if probe
+9) on close,
+	signal thread

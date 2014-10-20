@@ -1,0 +1,3 @@
+potentialAlias(ip198_32_42_14,ip198_32_42_65,allyipid).
+potentialNotAlias(ip198_32_42_14,ip199_109_4_73,quick).
+potentialNotAlias(ip198_32_42_65,ip199_109_4_73,quick).

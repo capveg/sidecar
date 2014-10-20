@@ -1,0 +1,29 @@
+
+
+
+
+
+	<script language="JavaScript">
+		function samePage() {
+			window.location='result.jsp';
+		}
+		
+		function doIt() {
+			setTimeout('samePage()', 2000);
+		}
+		doIt();
+	</script>
+
+
+
+
+<center>
+	<b>
+		Please Wait...Your request is being processed
+		<br>
+		It may take upto 3 minutes.
+	</b>
+	<br><br>
+	<img src="/lg/images/process_animation.gif"/>
+</center>
+	

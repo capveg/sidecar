@@ -1,0 +1,54 @@
+This is the list of commands to build the topology via condor.
+
+---------------------------------------------------
+
+
+1) compute the network between sources
+
+./condorSolve.rb -allCliques		# generate 2-clique intra-planetlab pairs
+
+2) merge those answers and compute conflict information
+
+find /fs/sidecar/run/alltrace/data -name clique\*.model > all_cliques.list
+cat all_cliques.list| unionModels.pl all_cliques -t -
+
+3) resolve conflicts in resultant conflict-debug file
+
+./condorSolve.rb -resolveConflicts /fs/sidecar/run/alltrace/cliques.conflict-debug
+
+
+4) apply conflict resolution to affected models
+
+./condorSolve.rb -fixAll /fs/sidecar/run/alltrace/all_cliques.hints-resolve
+
+5) recompute conflicts to see how much better(?) we did
+
+find /fs/sidecar/run/alltrace/data -name clique\*.model > all_cliques-fixed.list
+cat all_cliques.list| unionModels.pl all_cliques-fixed -t -
+
+
+6) run for the rest of data (non-cliques src/dst pairs -- takes like a week!?)
+
+./condor -solveAll 
+
+7) merge those answers and compute conflict information
+
+find /fs/sidecar/run/alltrace/data -name \*.model > all_models.list
+cat all_models.list | unionModels.pl all_models -t -
+
+8) apply conflict resolution to affected models
+
+./condorSolve.rb -fixAll /fs/sidecar/run/alltrace/all_models.hints-resolve
+
+9) remerge everything 
+
+find /fs/sidecar/run/alltrace/data -name \*.model > all_models-fixed.list
+cat all_models-fixed.list | unionModels.pl final-out -t -
+
+10) compute final adjacency (produces final-out.adj)
+
+dlv2adj.pl -o final-out.adj final-out.good
+
+
+
+

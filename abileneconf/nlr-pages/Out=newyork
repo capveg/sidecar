@@ -1,0 +1,695 @@
+.......................>show interface
+
+Loopback0 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is Loopback interface(s)
+  Internet address is 216.24.191.229/32
+  MTU 1514 bytes, BW Unknown
+     reliability Unknown, txload Unknown, rxload Unknown
+  Encapsulation Loopback,  loopback not set,
+  Last clearing of "show interface" counters Unknown
+  Datarate information unavailable.
+  Interface counters unavailable.
+
+Loopback1 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is Loopback interface(s)
+  Description: Loopback for RP
+  Internet address is 216.24.191.254/32
+  MTU 1514 bytes, BW Unknown
+     reliability Unknown, txload Unknown, rxload Unknown
+  Encapsulation Loopback,  loopback not set,
+  Last clearing of "show interface" counters Unknown
+  Datarate information unavailable.
+  Interface counters unavailable.
+
+Null0 is up, line protocol is up 
+  Interface state transitions: 0
+  Hardware is Null interface
+  Internet address is Unknown
+  MTU 1500 bytes, BW Unknown
+     reliability 255/255, txload Unknown, rxload Unknown
+  Encapsulation Null,  loopback not set,
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+
+TenGigE0/2/0/0 is up, line protocol is up 
+  Interface state transitions: 442
+  Hardware is TenGigE, address is 0013.c43d.ff06 (bia 0013.c43d.ff06)
+  Description: BB to CHIC te0/5/0/5 | NLR-NEWY-CHIC-10GE-100
+  Internet address is 216.24.186.33/31
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 246/255, txload 9/255, rxload 1/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 67254000 bits/sec, 24192 packets/sec
+  5 minute output rate 438223000 bits/sec, 45417 packets/sec
+     451587092260 packets input, 232092208408612 bytes, 318143 total input drops
+     38 drops for unrecognized upper-level protocol
+     Received 178 broadcast packets, 18744981966 multicast packets
+              1 runts, 8734907 giants, 0 throttles, 0 parity
+     3826 input errors, 18 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     724373591199 packets output, 796017925538684 bytes, 0 total output drops
+     Output 182 broadcast packets, 5666696433 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     441 carrier transitions
+
+TenGigE0/2/0/1 is up, line protocol is up 
+  Interface state transitions: 2
+  Hardware is TenGigE, address is 0013.c43d.ff07 (bia 0013.c43d.ff07)
+  Description: BB to NEWY 6509 te1/2
+  Internet address is Unknown
+  MTU 9212 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 2001000 bits/sec, 243 packets/sec
+  5 minute output rate 53000 bits/sec, 21 packets/sec
+     10736458431 packets input, 11372260435679 bytes, 2428 total input drops
+     26 drops for unrecognized upper-level protocol
+     Received 33814 broadcast packets, 53984452 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     594728751 packets output, 209303440971 bytes, 0 total output drops
+     Output 1797492 broadcast packets, 19263118 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     1 carrier transitions
+
+TenGigE0/2/0/1.101 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43d.ff07
+  Description: MATP layer3 backup (WASH), vlan101, AS40220
+  Internet address is 192.70.138.58/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 101,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     30240252 packets input, 27793981609 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 4 broadcast packets, 0 multicast packets
+     28331654 packets output, 19760255393 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+
+TenGigE0/2/0/1.111 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43d.ff07
+  Description: CaseWestern layer3 backup (CLEV), vlan 111, AS32666
+  Internet address is 216.24.184.53/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 111,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 546000 bits/sec, 120 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     9294933273 packets input, 9266559069527 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 14 broadcast packets, 0 multicast packets
+     233552272 packets output, 113955136552 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+
+TenGigE0/2/0/1.151 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43d.ff07
+  Description: NEWY-VINI
+  Internet address is 216.24.178.97/29
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 151,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     1985694 packets input, 280608961 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 32060 broadcast packets, 0 multicast packets
+     6359177 packets output, 697647987 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+
+TenGigE0/2/0/1.152 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43d.ff07
+  Description: NEWY Measurement PCs, vlan 152
+  Internet address is 216.24.187.65/28
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 152,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 1460000 bits/sec, 117 packets/sec
+  5 minute output rate 52000 bits/sec, 25 packets/sec
+     1359449976 packets input, 2026109944514 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 1458 broadcast packets, 154702 multicast packets
+     327369387 packets output, 72087085088 bytes, 0 total output drops
+     Output 0 broadcast packets, 151028 multicast packets
+
+TenGigE0/2/0/2 is up, line protocol is up 
+  Interface state transitions: 16
+  Hardware is TenGigE, address is 0013.c43d.ff08 (bia 0013.c43d.ff08)
+  Description: Cornell nyc1-6500 ten1/3 | NLR-NEWY-SYRA-10GE-86
+  Internet address is 192.35.82.129/26
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 250/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 30252000 bits/sec, 4323 packets/sec
+  5 minute output rate 13270000 bits/sec, 3088 packets/sec
+     88813901453 packets input, 55153754213371 bytes, 232 total input drops
+     148359 drops for unrecognized upper-level protocol
+     Received 98 broadcast packets, 48213999 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     41 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     86099306725 packets output, 70987438189484 bytes, 0 total output drops
+     Output 80560 broadcast packets, 4862478 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     15 carrier transitions
+
+TenGigE0/2/0/3 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43d.ff09 (bia 0013.c43d.ff09)
+  Description: MIT [NO-MONITOR]
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/2/0/4 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43d.ff0a (bia 0013.c43d.ff0a)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/2/0/5 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43d.ff0b (bia 0013.c43d.ff0b)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/2/0/6 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43d.ff0c (bia 0013.c43d.ff0c)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/2/0/7 is up, line protocol is up 
+  Interface state transitions: 6
+  Hardware is TenGigE, address is 0013.c43d.ff0d (bia 0013.c43d.ff0d)
+  Description: NLRview NEWY test PC [NO-MONITOR]
+  Internet address is 216.24.187.81/30
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     6298027 packets input, 48800495885 bytes, 0 total input drops
+     6 drops for unrecognized upper-level protocol
+     Received 5 broadcast packets, 10 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     4576575 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     740772 packets output, 108959057 bytes, 0 total output drops
+     Output 694 broadcast packets, 424471 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     5 carrier transitions
+
+TenGigE0/5/0/0 is up, line protocol is up 
+  Interface state transitions: 118
+  Hardware is TenGigE, address is 0013.c43e.0083 (bia 0013.c43e.0083)
+  Description: BB to WASH te0/5/0/0 | NLR-NEWY-WASH-10GE-98
+  Internet address is 216.24.186.22/31
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 246/255, txload 10/255, rxload 6/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 279170000 bits/sec, 57602 packets/sec
+  5 minute output rate 481577000 bits/sec, 54058 packets/sec
+     1102516315377 packets input, 905899526956328 bytes, 1019474 total input drops
+     35 drops for unrecognized upper-level protocol
+     Received 39 broadcast packets, 13874320877 multicast packets
+              0 runts, 8831939 giants, 0 throttles, 0 parity
+     1431 input errors, 1 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     593478648131 packets output, 508013190964625 bytes, 0 total output drops
+     Output 42 broadcast packets, 15623665765 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     117 carrier transitions
+
+TenGigE0/5/0/1 is administratively down, line protocol is administratively down 
+  Interface state transitions: 3
+  Hardware is TenGigE, address is 0013.c43e.0084 (bia 0013.c43e.0084)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/5/0/2 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43e.0085 (bia 0013.c43e.0085)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/5/0/3 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43e.0086 (bia 0013.c43e.0086)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/5/0/4 is up, line protocol is up 
+  Interface state transitions: 2
+  Hardware is TenGigE, address is 0013.c43e.0087 (bia 0013.c43e.0087)
+  Description: MANLAN 6513 te 10/3
+  Internet address is Unknown
+  MTU 9212 bytes, BW 10000000 Kbit
+     reliability 252/255, txload 7/255, rxload 20/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 895582000 bits/sec, 96280 packets/sec
+  5 minute output rate 339863000 bits/sec, 80138 packets/sec
+     1265541269272 packets input, 1272019562248060 bytes, 106052734 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 1901845 broadcast packets, 17537235170 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     1521505117201 packets output, 1102924800330199 bytes, 0 total output drops
+     Output 338858 broadcast packets, 35932137982 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     1 carrier transitions
+
+TenGigE0/5/0/4.89 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: CLARA via MANLAN-Awave, AS27750
+  Internet address is 216.24.184.89/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 89,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 798000 bits/sec, 187 packets/sec
+  5 minute output rate 3797000 bits/sec, 565 packets/sec
+     20263671462 packets input, 6422233715408 bytes, 1 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 3207 broadcast packets, 141374 multicast packets
+     17809384705 packets output, 16625549005497 bytes, 0 total output drops
+     Output 0 broadcast packets, 266640 multicast packets
+
+TenGigE0/5/0/4.92 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: AMPATH via MANLAN-Awave, AS20080
+  Internet address is 198.32.252.161/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 92,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 8403000 bits/sec, 1790 packets/sec
+  5 minute output rate 5877000 bits/sec, 1497 packets/sec
+     65162707881 packets input, 39104987866628 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 3259 broadcast packets, 145573 multicast packets
+     27097342680 packets output, 21451128344951 bytes, 0 total output drops
+     Output 0 broadcast packets, 164275 multicast packets
+
+TenGigE0/5/0/4.211 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: GEANT via MANLAN, AS20965
+  Internet address is 216.24.184.85/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 5/255, rxload 18/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 211,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 798716000 bits/sec, 79119 packets/sec
+  5 minute output rate 228547000 bits/sec, 65616 packets/sec
+     983380306003 packets input, 1108072915145646 bytes, 3343418 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 21519 broadcast packets, 3343499 multicast packets
+     1205144888823 packets output, 823033453934931 bytes, 0 total output drops
+     Output 0 broadcast packets, 143450 multicast packets
+
+TenGigE0/5/0/4.911 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: CAnet-Montreal via MANLAN, AS6509
+  Internet address is 216.24.184.45/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 911,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 75493000 bits/sec, 11856 packets/sec
+  5 minute output rate 65700000 bits/sec, 7439 packets/sec
+     129742046110 packets input, 76945815432520 bytes, 5196 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 21376 broadcast packets, 5234 multicast packets
+     102454552640 packets output, 107969563922606 bytes, 0 total output drops
+     Output 0 broadcast packets, 169771 multicast packets
+
+TenGigE0/5/0/4.1112 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: ESnet via MANLAN AS293
+  Internet address is 198.125.140.225/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 1112,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 1456000 bits/sec, 1206 packets/sec
+  5 minute output rate 25936000 bits/sec, 2643 packets/sec
+     8347312648 packets input, 7453348244757 bytes, 65 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 21387 broadcast packets, 66 multicast packets
+     77613799231 packets output, 57861048933054 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+
+TenGigE0/5/0/4.1113 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: SURFNET via MANLAN, AS1103
+  Internet address is 145.145.166.18/30
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 1113,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 10481000 bits/sec, 2403 packets/sec
+  5 minute output rate 9124000 bits/sec, 2876 packets/sec
+     58551088213 packets input, 28101503291230 bytes, 5196150 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 20479 broadcast packets, 5198797 multicast packets
+     91385361970 packets output, 69286939357507 bytes, 0 total output drops
+     Output 0 broadcast packets, 157352 multicast packets
+
+TenGigE0/5/0/4.4004 is up, line protocol is up 
+  Interface state transitions: 1
+  Hardware is VLAN sub-interface(s), address is 0013.c43e.0087
+  Description: ESnet-NLR ipv6-only
+  Internet address is Unknown
+  MTU 9216 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation 802.1Q Virtual LAN, VLAN Id 4004,  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     3395204 packets input, 361059396 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 731 multicast packets
+     7309856 packets output, 667427911 bytes, 0 total output drops
+     Output 0 broadcast packets, 1745968 multicast packets
+
+TenGigE0/5/0/5 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43e.0088 (bia 0013.c43e.0088)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/5/0/6 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43e.0089 (bia 0013.c43e.0089)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+TenGigE0/5/0/7 is administratively down, line protocol is administratively down 
+  Interface state transitions: 1
+  Hardware is TenGigE, address is 0013.c43e.008a (bia 0013.c43e.008a)
+  Internet address is Unknown
+  MTU 1514 bytes, BW 10000000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 10000Mb/s, LR, link type is force-up
+  output flow control is on, input flow control is off
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 0 broadcast packets, 0 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 packets output, 0 bytes, 0 total output drops
+     Output 0 broadcast packets, 0 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     0 carrier transitions
+
+MgmtEth0/RP0/CPU0/0 is up, line protocol is up 
+  Interface state transitions: 4
+  Hardware is Management Ethernet, address is 001a.6c40.d55e (bia 001a.6c40.d55e)
+  Description: RP0 to Racklan f0/15
+  Internet address is 216.24.177.117/28
+  MTU 1514 bytes, BW 100000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 100Mb/s, link type is autonegotiation
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     13622818 packets input, 1513663682 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 476 broadcast packets, 429948 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     665027 packets output, 135014806 bytes, 0 total output drops
+     Output 78 broadcast packets, 656311 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     3 carrier transitions
+
+MgmtEth0/RP1/CPU0/0 is up, line protocol is up 
+  Interface state transitions: 4
+  Hardware is Management Ethernet, address is 0012.7fd6.b8f8 (bia 0012.7fd6.b8f8)
+  Description: RP1 to Racklan f0/16
+  Internet address is 216.24.177.118/28
+  MTU 1514 bytes, BW 100000 Kbit
+     reliability 255/255, txload 0/255, rxload 0/255
+  Encapsulation ARPA,
+  Full-duplex, 100Mb/s, link type is autonegotiation
+  loopback not set,
+  ARP type ARPA, ARP timeout 04:00:00
+  Last clearing of "show interface" counters never
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     488834 packets input, 186889325 bytes, 0 total input drops
+     0 drops for unrecognized upper-level protocol
+     Received 474 broadcast packets, 429646 multicast packets
+              0 runts, 0 giants, 0 throttles, 0 parity
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     659923 packets output, 133965114 bytes, 0 total output drops
+     Output 7 broadcast packets, 655854 multicast packets
+     0 output errors, 0 underruns, 0 applique, 0 resets
+     0 output buffer failures, 0 output buffers swapped out
+     3 carrier transitions

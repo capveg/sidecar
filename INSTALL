@@ -1,0 +1,15 @@
+TCP Sidecar INSTALL instructions:
+
+You need a recent copy of libpcap to run sidecar.  Some of the scripts in the ./scripts/
+directory require Graphviz from www.graphviz.org.
+
+
+1) There is currently no configure script: run `make` (requires GNU make)
+	The code should be fairly portable, please mail me (capveg@cs.umd.edu) if
+	you find it otherwise and are willing to contribute a patch to fix it.
+2) `make install` puts the relevant binaries and  libraries into ./tar/
+	and `make tar` creates a tgz file for ease of moving compiled binaries
+	to different machines.  If you want to install sidecar into a system wide
+	place, run `make install` and copy the files out of ./tar and put them
+	in place by hand (this will be improved, time available).
+

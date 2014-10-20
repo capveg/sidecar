@@ -1,0 +1,980 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML><HEAD><TITLE>CA*net 4</TITLE>
+<SCRIPT language=javascript src="http://www.canarie.ca/scripts/sniffer.js"></script>
+
+<SCRIPT language=javascript1.2 src="http://www.canarie.ca/scripts/canet4.js"></script>
+
+<SCRIPT language=javascript1.2 src="http://www.canarie.ca/scripts/style.js"></script>
+
+<SCRIPT language=Javascript1.2>
+        <!-- Hide script from old browsers
+        function openWindow(url) {
+        self.name = "main"; urlWindow = window.open(url, 'basewindow', 'width=700,height=400,toolbar=yes,location=1,scrollbars=yes,resizable=yes, left=100, top=100');
+        }
+        //End hiding script from old browsers-->
+        </script>
+
+<STYLE>A:active {
+        COLOR: #000066; TEXT-DECORATION: underline
+}
+A:visited {
+        COLOR: #000066; TEXT-DECORATION: underline
+}
+A:link {
+        COLOR: #000066; TEXT-DECORATION: underline
+}
+A:hover {
+        COLOR: #000066; TEXT-DECORATION: none
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+
+<BODY bgColor="#ffffff" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<table width="666" height="137" cellpadding="0" cellspacing="0" border="0" bgcolor="#F5F9FC">
+<tr>
+<td colspan="3" height="98">
+<img src="http://www.canarie.ca/images/top_banner.gif" width="666" height="98" alt="" border="0" usemap="#banner">
+</td>
+</tr>
+
+<tr>
+<td height="39" valign="bottom">
+<a href="http://www.canarie.ca/canet4_f/index.html">
+<img src="http://www.canarie.ca/images/french.gif" width="87" height="30" alt="Françs" border="0">
+</a>
+</td>
+<td height="39" valign="bottom">
+<img src="http://www.canarie.ca/images/filler_middle.gif" width="491" height="30" alt="" border="0">
+</td>
+<td height="39" valign="bottom">
+<a href="http://www.canarie.ca/help/index.html">
+<img src="http://www.canarie.ca/images/search.gif" width="88" height="30" alt="Search" border="0">
+</a>
+</td>
+</tr>
+</table>
+<table width="666" height="65" cellpadding="0" cellspacing="0" border="0" bgcolor="#F5F9FC">
+        <!--Insert Content Here-->
+
+        <tr>
+        <td colspan="3" valign="top" height="25"  class="title"><img src="images/canet4.gif"> <font size=big> Looking Glass </font><hr size="1"></td>
+        </tr>
+
+        <form action="lg.php" method="post">
+        <tr>
+        <td colspan="1" height="20">Router:</td>
+        <td colspan="2">
+                <table>
+                        <tr><td width="160"><select name="router" size="1">
+
+                        <option value ="205.189.32.44">Calgary</option>
+<option value ="205.189.32.45">Winnipeg</option>
+<option value ="205.189.32.46">Toronto</option>
+<option value ="205.189.32.47" SELECTED>Montreal</option>
+<option value ="205.189.32.48">Halifax</option>
+<option value ="205.189.32.49">Edmonton</option>
+</select></td>
+                        <td><font size="-1">* IP address/host name:&nbsp;&nbsp;** Multicast group address:&nbsp;&nbsp;*** IP route:</font></td></tr>
+
+                </table>
+        </td></tr>
+        
+        <tr>
+        <td colspan="1" height="20">Command: </td>
+        <td colspan="2">
+                <table>
+                        <tr><td width="160"> <select name="choice">
+                           <option value="bgp_summary"><font size="-1">&nbsp;show bgp summary</font>
+                           <option value="bgp_neighbour"><font size="-1">&nbsp;show bgp neighbour</font>
+                           <option value="show_interfaces"><font size="-1">&nbsp;show interfaces</font>
+                           <option value="show_route"><font size="-1">&nbsp;show route ***</font>
+                           <option value="show_multicast_session"><font size="-1">&nbsp;show multicast session</font>
+                           <option value="show_msdp_brief"><font size="-1">&nbsp;show msdp brief</font>
+                           <option value="show_msdp_sa_source"><font size="-1">&nbsp;show msdp source-active source *</font>
+                           <option value="show_msdp_sa_group"><font size="-1">&nbsp;show msdp source-active group **</font>
+                           <option value="show_multicast_rpf"><font size="-1">&nbsp;show multicast rpf *</font>
+                           <option value="show_pim_neighbors_detail"><font size="-1">&nbsp;show pim neighbors detail</font>
+                           <option value="show_pim_interfaces"><font size="-1">&nbsp;show pim interfaces</font>
+                           <option value="show_pim_rps_detail"><font size="-1">&nbsp;show pim rps detail</font>
+                           <option value="show_pim_join_extensive"><font size="-1">&nbsp;show pim join extensive **</font>
+                           <option value="show_multicast_route_source-prefix"><font size="-1">&nbsp;show multicast route source-prefix *</font>
+                           <option value="traceroute"><font size="-1">&nbsp;traceroute *</font>
+                           <option value="ping"><font size="-1">&nbsp;ping *</font>
+                           <option value="mtrace"><font size="-1">&nbsp;mtrace *</font>
+                         </td>
+                        
+                        <td>
+                        <input type="text" size="20" name="IP">&nbsp;
+                         <!-- Command Line Interface:<br>
+                          <input type="text" length="20" name="strCommand"> -->
+                          <input type="hidden" name="submitted" value="true">
+                          <input type="submit" name="submit" value=submit>
+                        </td>
+                        </tr>
+                </table>
+        </td></tr></form>
+</table>
+
+<table width="666" height="100%" border="1">
+<tr><td width="666" valign="top">
+        <b>Montreal</b> <font size="-1">JUNOS Command: show interfaces | no-more</font><hr size=1 width=200 align=left><pre>Physical interface: ge-0/0/0, Enabled, Physical link is Up
+  Interface index: 128, SNMP ifIndex: 23
+  Description: GigE to Winnipeg (c4-wincor) 
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:00, Hardware address: 00:90:69:fe:8c:00
+  Last flapped   : 2007-08-26 04:16:46 EDT (1w3d 09:17 ago)
+  Input rate     : 13597832 bps (2898 pps)
+  Output rate    : 29704872 bps (4057 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-0/0/0.0 (Index 66) (SNMP ifIndex 44) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 9178
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.12/30, Local: 205.189.32.14,
+        Broadcast: 205.189.32.15
+    Protocol iso, MTU: 9175
+      Flags: Is-Primary
+    Protocol inet6, MTU: 9178
+      Flags: Is-Primary
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:4::/64, Local: 2001:410:101:4::2
+      Addresses
+        Destination: 2001:410:101:4::/64,
+        Local: 2001:410:101:4:290:69ff:fefe:8c00
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8c00
+
+Physical interface: ge-0/1/0, Enabled, Physical link is Up
+  Interface index: 129, SNMP ifIndex: 31
+  Description: NB (Fredericton) AS611
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:1f, Hardware address: 00:90:69:fe:8c:1f
+  Last flapped   : 2007-08-15 03:44:09 EDT (3w0d 09:49 ago)
+  Input rate     : 13534400 bps (2557 pps)
+  Output rate    : 7792104 bps (2239 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-0/1/0.0 (Index 67) (SNMP ifIndex 32) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: User-MTU, uRPF
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.208/30, Local: 205.189.32.210,
+        Broadcast: 205.189.32.211
+    Protocol iso, MTU: 9175
+      Flags: None
+    Protocol inet6, MTU: 1500
+      Flags: User-MTU
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:14::/64, Local: 2001:410:101:14::1
+      Addresses
+        Destination: 2001:410:101:14::/64,
+        Local: 2001:410:101:14:290:69ff:fefe:8c1f
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8c1f
+
+Physical interface: ge-0/2/0, Enabled, Physical link is Up
+  Interface index: 130, SNMP ifIndex: 42
+  Description: New York - Manlan 2 (ge-9/8)
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:3e, Hardware address: 00:90:69:fe:8c:3e
+  Last flapped   : 2007-07-26 10:19:50 EDT (5w6d 03:14 ago)
+  Input rate     : 130605488 bps (16845 pps)
+  Output rate    : 61483472 bps (15104 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-0/2/0.109 (Index 68) (SNMP ifIndex 51) 
+    Description: Abilene (New York) AS11537
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.109 ]  Encapsulation: ENET2
+    Input packets : 111320672768 
+    Output packets: 78375313168
+    Protocol inet, MTU: 9174
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.92/30, Local: 205.189.32.94,
+        Broadcast: 205.189.32.95
+    Protocol iso, MTU: 9171
+      Flags: None
+    Protocol inet6, MTU: 9174
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:24::/64, Local: 2001:410:101:24::1
+      Addresses
+        Destination: 2001:410:101:24::/64,
+        Local: 2001:410:101:24:290:6900:6dfe:8c3e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:6900:6dfe:8c3e
+
+  Logical interface ge-0/2/0.124 (Index 69) (SNMP ifIndex 77) 
+    Description: esnet (New York) AS293
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.124 ]  Encapsulation: ENET2
+    Input packets : 4027997783 
+    Output packets: 4505187027
+    Protocol inet, MTU: 9174
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 198.124.216.196/30, Local: 198.124.216.198,
+        Broadcast: 198.124.216.199
+    Protocol iso, MTU: 9171
+      Flags: None
+    Protocol inet6, MTU: 9174
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:400:6003:2::/64, Local: 2001:400:6003:2::2
+      Addresses
+        Destination: 2001:400:6003:2::/64,
+        Local: 2001:400:6003:2:290:6900:7cfe:8c3e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:6900:7cfe:8c3e
+
+  Logical interface ge-0/2/0.609 (Index 70) (SNMP ifIndex 58) 
+    Description: NYSERNet (New York) AS3754
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.609 ]  Encapsulation: ENET2
+    Input packets : 18992149243 
+    Output packets: 16118193907
+    Protocol inet, MTU: 9174
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 199.109.4.140/30, Local: 199.109.4.142,
+        Broadcast: 199.109.4.143
+    Protocol iso, MTU: 9171
+      Flags: None
+    Protocol inet6, MTU: 9174
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:27::/64, Local: 2001:410:101:27::1
+      Addresses
+        Destination: 2001:410:101:27::/64,
+        Local: 2001:410:101:27:290:6902:61fe:8c3e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:6902:61fe:8c3e
+
+  Logical interface ge-0/2/0.911 (Index 71) (SNMP ifIndex 53) 
+    Description: NLR (NYC)AS19401
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.911 ]  Encapsulation: ENET2
+    Input packets : 87909719367 
+    Output packets: 100759560813
+    Protocol inet, MTU: 9174
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 216.24.184.44/30, Local: 216.24.184.46,
+        Broadcast: 216.24.184.47
+    Protocol iso, MTU: 9171
+      Flags: None
+    Protocol inet6, MTU: 9174
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:33::/64, Local: 2001:410:101:33::1
+      Addresses
+        Destination: 2001:410:101:33::/64,
+        Local: 2001:410:101:33:290:6903:8ffe:8c3e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:6903:8ffe:8c3e
+
+  Logical interface ge-0/2/0.4002 (Index 72) (SNMP ifIndex 71) 
+    Description: SINET (New York) AS2907
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.4002 ]  Encapsulation: ENET2
+    Input packets : 1225368437 
+    Output packets: 2005507331
+    Protocol inet, MTU: 9000
+      Flags: User-MTU
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 150.99.199.236/30, Local: 150.99.199.238,
+        Broadcast: 150.99.199.239
+    Protocol iso, MTU: 9171
+      Flags: None
+
+  Logical interface ge-0/2/0.32767 (Index 73) (SNMP ifIndex 36) 
+    Flags: SNMP-Traps VLAN-Tag [ 0x0000.0 ]  Encapsulation: ENET2
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: ge-0/3/0, Enabled, Physical link is Down
+  Interface index: 131, SNMP ifIndex: 74
+  Description: SRC-RadioCanada (Montreal) AS32563
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running Down
+  Interface flags: Hardware-Down SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:5d, Hardware address: 00:90:69:fe:8c:5d
+  Last flapped   : 2007-05-17 14:38:33 EDT (15w5d 22:55 ago)
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Active alarms  : LINK
+  Active defects : LINK
+
+  Logical interface ge-0/3/0.0 (Index 74) (SNMP ifIndex 75) 
+    Flags: Device-Down SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: User-MTU, uRPF
+      Addresses, Flags: Dest-route-down Is-Preferred Is-Primary
+        Destination: 205.189.32.100/30, Local: 205.189.32.101,
+        Broadcast: 205.189.32.103
+    Protocol iso, MTU: 9175
+      Flags: None
+
+Physical interface: ge-1/0/0, Enabled, Physical link is Up
+  Interface index: 132, SNMP ifIndex: 59
+  Description: GigE to Toronto (c4-torcor)
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:7e, Hardware address: 00:90:69:fe:8c:7e
+  Last flapped   : 2007-08-28 10:53:44 EDT (1w1d 02:40 ago)
+  Input rate     : 62167352 bps (11208 pps)
+  Output rate    : 41467112 bps (7730 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-1/0/0.0 (Index 75) (SNMP ifIndex 28) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 9178
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.16/30, Local: 205.189.32.18,
+        Broadcast: 205.189.32.19
+    Protocol iso, MTU: 9175
+      Flags: None
+    Protocol inet6, MTU: 9178
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:5::/64, Local: 2001:410:101:5::2
+      Addresses
+        Destination: 2001:410:101:5::/64,
+        Local: 2001:410:101:5:290:69ff:fefe:8c7e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8c7e
+
+Physical interface: ge-1/1/0, Enabled, Physical link is Up
+  Interface index: 133, SNMP ifIndex: 21
+  Description: RISQ (Montreal) AS376
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:9d, Hardware address: 00:90:69:fe:8c:9d
+  Last flapped   : 2007-07-26 10:19:59 EDT (5w6d 03:13 ago)
+  Input rate     : 69156496 bps (12573 pps)
+  Output rate    : 94774968 bps (15212 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-1/1/0.0 (Index 76) (SNMP ifIndex 24) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: User-MTU, uRPF
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.224/30, Local: 205.189.32.226,
+        Broadcast: 205.189.32.227
+    Protocol iso, MTU: 9175
+      Flags: None
+    Protocol inet6, MTU: 1500
+      Flags: User-MTU
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:13::/64, Local: 2001:410:101:13::1
+      Addresses
+        Destination: 2001:410:101:13::/64,
+        Local: 2001:410:101:13:290:69ff:fefe:8c9d
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8c9d
+
+Physical interface: ge-1/2/0, Enabled, Physical link is Up
+  Interface index: 134, SNMP ifIndex: 22
+  Description: Geant (New York) AS20965
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:bc, Hardware address: 00:90:69:fe:8c:bc
+  Last flapped   : 2007-07-26 10:19:54 EDT (5w6d 03:13 ago)
+  Input rate     : 376 bps (0 pps)
+  Output rate    : 12048 bps (15 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-1/2/0.0 (Index 77) (SNMP ifIndex 33) 
+    Description: GEANT (MANLAN) Peering - ge-2/3/1
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 9178
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 62.40.124.224/30, Local: 62.40.124.226,
+        Broadcast: 62.40.124.227
+    Protocol iso, MTU: 9175
+      Flags: None
+    Protocol inet6, MTU: 9178
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:798:29:10aa::4/126, Local: 2001:798:29:10aa::6
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8cbc
+
+Physical interface: gr-1/3/0, Enabled, Physical link is Up
+  Interface index: 137, SNMP ifIndex: 27
+  Type: GRE, Link-level type: GRE, MTU: Unlimited, Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: Point-To-Point SNMP-Traps
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+Physical interface: ip-1/3/0, Enabled, Physical link is Up
+  Interface index: 138, SNMP ifIndex: 34
+  Type: IPIP, Link-level type: IP-over-IP, MTU: Unlimited, Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+  Logical interface ip-1/3/0.3 (Index 78) (SNMP ifIndex 35) 
+    Description: vBNS
+    Flags: Hardware-Down Point-To-Point SNMP-Traps 0x4000
+    IP-Header 204.147.128.194:205.189.32.18:4:df:64:00000000
+    Encapsulation: IPv4-NULL
+    Input packets : 0 
+    Output packets: 0
+    Protocol inet6, MTU: Unlimited
+      Flags: None
+      Addresses, Flags: Dest-route-down Is-Preferred Is-Primary
+        Destination: 3ffe:28ff:ffff:2::100/127, Local: 3ffe:28ff:ffff:2::101
+      Addresses, Flags: Dest-route-down Is-Preferred
+        Destination: fe80::/64, Local: fe80::2a0:a5ff:fe12:795e
+
+  Logical interface ip-1/3/0.10 (Index 79) (SNMP ifIndex 39) 
+    Description: RISQ
+    Flags: Point-To-Point SNMP-Traps 0x4000
+    IP-Header 206.167.112.215:205.189.32.226:4:df:64:00000000
+    Encapsulation: IPv4-NULL
+    Input packets : 0 
+    Output packets: 22
+    Protocol inet6, MTU: 1480
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 2001:410:101::c/126, Local: 2001:410:101::e
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::2a0:a5ff:fe12:795e
+
+  Logical interface ip-1/3/0.12 (Index 80) (SNMP ifIndex 72) 
+    Description: Radio-Canada
+    Flags: Point-To-Point SNMP-Traps 0x4000
+    IP-Header 159.33.66.51:205.189.32.226:4:df:64:00000000
+    Encapsulation: IPv4-NULL
+    Input packets : 133936865 
+    Output packets: 25401156573
+    Protocol inet, MTU: 1480
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.36/30, Local: 205.189.32.37
+
+Physical interface: lt-1/3/0, Enabled, Physical link is Up
+  Interface index: 141, SNMP ifIndex: 66
+  Type: Logical-tunnel, Link-level type: Logical-tunnel, MTU: Unlimited,
+  Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: Point-To-Point SNMP-Traps
+  Link flags     : None
+  Physical info  : 13
+  Current address: 00:90:69:fe:8c:db
+  Last flapped   : 2006-12-18 22:30:51 EST (37w1d 14:03 ago)
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+Physical interface: mt-1/3/0, Enabled, Physical link is Up
+  Interface index: 140, SNMP ifIndex: 47
+  Type: Multicast-GRE, Link-level type: GRE, MTU: Unlimited, Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+Physical interface: pd-1/3/0, Enabled, Physical link is Up
+  Interface index: 135, SNMP ifIndex: 43
+  Type: PIMD, Link-level type: PIM-Decapsulator, MTU: Unlimited, Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+  Logical interface pd-1/3/0.32769 (Index 81) (SNMP ifIndex 0) 
+    Flags: Point-To-Point SNMP-Traps 0x4000
+    LinkAddress 0-0---10020000000000000000000000000000 Encapsulation: PIM-Decap
+    Input packets : 0 
+    Output packets: 0
+    Protocol inet, MTU: Unlimited
+      Flags: None
+
+Physical interface: pe-1/3/0, Enabled, Physical link is Up
+  Interface index: 136, SNMP ifIndex: 26
+  Type: PIME, Link-level type: PIM-Encapsulator, MTU: Unlimited, Speed: 800mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+Physical interface: vt-1/3/0, Enabled, Physical link is Up
+  Interface index: 139, SNMP ifIndex: 37
+  Type: Loopback, Link-level type: Virtual-loopback-tunnel, MTU: Unlimited,
+  Speed: 800mbps
+  Device flags   : Present Running
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+
+Physical interface: ge-2/0/0, Enabled, Physical link is Up
+  Interface index: 142, SNMP ifIndex: 60
+  Description: GigE to Halifax (c4-halcor)
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8c:fc, Hardware address: 00:90:69:fe:8c:fc
+  Last flapped   : 2007-09-02 19:37:38 EDT (2d 17:56 ago)
+  Input rate     : 55556000 bps (8693 pps)
+  Output rate    : 55926592 bps (6542 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-2/0/0.0 (Index 82) (SNMP ifIndex 29) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 9178
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.24/30, Local: 205.189.32.25,
+        Broadcast: 205.189.32.27
+    Protocol iso, MTU: 9175
+      Flags: None
+    Protocol inet6, MTU: 9178
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:7::/64, Local: 2001:410:101:7::1
+      Addresses
+        Destination: 2001:410:101:7::/64,
+        Local: 2001:410:101:7:290:69ff:fefe:8cfc
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:69ff:fefe:8cfc
+
+Physical interface: ge-2/1/0, Enabled, Physical link is Up
+  Interface index: 143, SNMP ifIndex: 61
+  Description: GigE to ARDNOC (Ottawa)
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:1b, Hardware address: 00:90:69:fe:8d:1b
+  Last flapped   : 2007-04-24 20:00:22 EDT (19w0d 17:33 ago)
+  Input rate     : 1452768 bps (265 pps)
+  Output rate    : 884856 bps (956 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-2/1/0.1 (Index 83) (SNMP ifIndex 40) 
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.1 ]  Encapsulation: ENET2
+    Input packets : 4349526381 
+    Output packets: 11324879461
+    Protocol inet, MTU: 9174
+      Flags: uRPF
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.52/30, Local: 205.189.32.54,
+        Broadcast: 205.189.32.55
+    Protocol iso, MTU: 9171
+      Flags: None
+    Protocol inet6, MTU: 9174
+      Flags: None
+      Addresses, Flags: Preferred Is-Preferred Is-Primary
+        Destination: 2001:410:101:a::/64, Local: 2001:410:101:a::1
+      Addresses
+        Destination: 2001:410:101:a::/64,
+        Local: 2001:410:101:a:290:6900:1fe:8d1b
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::290:6900:1fe:8d1b
+
+  Logical interface ge-2/1/0.600 (Index 84) (SNMP ifIndex 41) 
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.600 ]  Encapsulation: ENET2
+    Input packets : 2661339 
+    Output packets: 11364599
+    Protocol inet, MTU: 1500
+      Flags: User-MTU
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.56/30, Local: 205.189.32.57,
+        Broadcast: 205.189.32.59
+    Protocol iso, MTU: 9171
+      Flags: None
+
+  Logical interface ge-2/1/0.601 (Index 85) (SNMP ifIndex 49) 
+    Description: Detective
+    Flags: SNMP-Traps VLAN-Tag [ 0x8100.601 ]  Encapsulation: ENET2
+    Input packets : 927573 
+    Output packets: 14924307
+    Protocol inet, MTU: 1500
+      Flags: User-MTU
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.60/30, Local: 205.189.32.61,
+        Broadcast: 205.189.32.63
+    Protocol iso, MTU: 9171
+      Flags: None
+
+  Logical interface ge-2/1/0.32767 (Index 86) (SNMP ifIndex 38) 
+    Flags: SNMP-Traps VLAN-Tag [ 0x0000.0 ]  Encapsulation: ENET2
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: fe-2/2/0, Enabled, Physical link is Up
+  Interface index: 144, SNMP ifIndex: 54
+  Description: planetlab1
+  Link-level type: Ethernet, MTU: 1514, Speed: 100mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:3a, Hardware address: 00:90:69:fe:8d:3a
+  Last flapped   : 2007-01-15 15:59:19 EST (33w1d 20:34 ago)
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 456 bps (0 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface fe-2/2/0.0 (Index 87) (SNMP ifIndex 62) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.146/31, Local: 205.189.32.146
+    Protocol iso, MTU: 1497
+      Flags: None
+
+Physical interface: fe-2/2/1, Enabled, Physical link is Up
+  Interface index: 145, SNMP ifIndex: 55
+  Description: planetlab2
+  Link-level type: Ethernet, MTU: 1514, Speed: 100mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:3b, Hardware address: 00:90:69:fe:8d:3b
+  Last flapped   : 2006-12-18 22:30:51 EST (37w1d 14:03 ago)
+  Input rate     : 2592 bps (3 pps)
+  Output rate    : 3056 bps (4 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface fe-2/2/1.0 (Index 88) (SNMP ifIndex 63) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.148/31, Local: 205.189.32.148
+    Protocol iso, MTU: 1497
+      Flags: None
+
+Physical interface: fe-2/2/2, Enabled, Physical link is Up
+  Interface index: 146, SNMP ifIndex: 56
+  Description: planetlabps
+  Link-level type: Ethernet, MTU: 1514, Speed: 10m, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:3c, Hardware address: 00:90:69:fe:8d:3c
+  Last flapped   : 2006-12-18 22:30:51 EST (37w1d 14:03 ago)
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface fe-2/2/2.0 (Index 89) (SNMP ifIndex 64) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.150/31, Local: 205.189.32.150
+    Protocol iso, MTU: 1497
+      Flags: None
+
+Physical interface: fe-2/2/3, Enabled, Physical link is Down
+  Interface index: 147, SNMP ifIndex: 57
+  Link-level type: Ethernet, MTU: 1514, Speed: 10m, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled
+  Device flags   : Present Running Down
+  Interface flags: Hardware-Down SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:3d, Hardware address: 00:90:69:fe:8d:3d
+  Last flapped   : 2006-12-18 22:30:51 EST (37w1d 14:03 ago)
+  Input rate     : 0 bps (0 pps)
+  Output rate    : 0 bps (0 pps)
+  Active alarms  : LINK
+  Active defects : LINK
+
+Physical interface: ge-2/3/0, Enabled, Physical link is Up
+  Interface index: 148, SNMP ifIndex: 25
+  Description: ORANO (Ottawa) AS26677
+  Link-level type: Ethernet, MTU: 9192, Speed: 1000mbps, Loopback: Disabled,
+  Source filtering: Disabled, Flow control: Enabled, Auto-negotiation: Enabled,
+  Remote fault: Online
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps Internal: 0x4000
+  Link flags     : None
+  CoS queues     : 4 supported, 4 maximum usable queues
+  Current address: 00:90:69:fe:8d:59, Hardware address: 00:90:69:fe:8d:59
+  Last flapped   : 2007-04-24 20:00:22 EDT (19w0d 17:33 ago)
+  Input rate     : 15621056 bps (3883 pps)
+  Output rate    : 71928912 bps (8364 pps)
+  Active alarms  : None
+  Active defects : None
+
+  Logical interface ge-2/3/0.0 (Index 90) (SNMP ifIndex 46) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: User-MTU, uRPF, uRPF-loose
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 205.189.32.228/30, Local: 205.189.32.230,
+        Broadcast: 205.189.32.231
+    Protocol iso, MTU: 9175
+      Flags: None
+
+Physical interface: dsc, Enabled, Physical link is Up
+  Interface index: 5, SNMP ifIndex: 5
+  Type: Software-Pseudo, MTU: Unlimited
+  Device flags   : Present Running
+  Interface flags: Point-To-Point SNMP-Traps
+  Link flags     : None
+  Last flapped   : Never
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: fxp0, Enabled, Physical link is Up
+  Interface index: 1, SNMP ifIndex: 1
+  Type: Ethernet, Link-level type: Ethernet, MTU: 1514, Speed: 100mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link type      : Full-Duplex
+  Current address: 00:a0:a5:12:79:5e, Hardware address: 00:a0:a5:12:79:5e
+  Last flapped   : Never
+    Input packets : 49632187 
+    Output packets: 49899
+
+  Logical interface fxp0.0 (Index 2) (SNMP ifIndex 13) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: Is-Primary
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 192.168.4/23, Local: 192.168.4.181,
+        Broadcast: 192.168.5.255
+
+Physical interface: fxp1, Enabled, Physical link is Up
+  Interface index: 2, SNMP ifIndex: 2
+  Type: Ethernet, Link-level type: Ethernet, MTU: 1514, Speed: 100mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link type      : Full-Duplex
+  Current address: 02:01:00:00:00:05, Hardware address: 02:01:00:00:00:05
+  Last flapped   : Never
+    Input packets : 2733003857 
+    Output packets: 2093908345
+
+  Logical interface fxp1.0 (Index 3) (SNMP ifIndex 14) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: Is-Primary
+      Addresses, Flags: Is-Default Is-Preferred Is-Primary
+        Destination: 10/8, Local: 10.0.0.5, Broadcast: 10.255.255.255
+    Protocol inet6, MTU: 1500
+      Flags: Is-Primary
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::201:ff:fe00:5
+      Addresses, Flags: Is-Default Is-Preferred Is-Primary
+        Destination: fec0::/64, Local: fec0::a:0:0:5
+    Protocol tnp, MTU: 1500
+      Flags: Primary, Is-Primary
+      Addresses
+        Local: 5
+
+Physical interface: fxp2, Enabled, Physical link is Up
+  Interface index: 3, SNMP ifIndex: 3
+  Type: Ethernet, Link-level type: Ethernet, MTU: 1514, Speed: 100mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link type      : Full-Duplex
+  Current address: 02:01:01:00:00:05, Hardware address: 02:01:01:00:00:05
+  Last flapped   : Never
+    Input packets : 134041844 
+    Output packets: 45184377
+
+  Logical interface fxp2.0 (Index 4) (SNMP ifIndex 15) 
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Protocol inet, MTU: 1500
+      Flags: None
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: 10/8, Local: 10.0.0.5, Broadcast: 10.255.255.255
+    Protocol inet6, MTU: 1500
+      Flags: None
+      Addresses, Flags: Is-Preferred
+        Destination: fe80::/64, Local: fe80::201:1ff:fe00:5
+      Addresses, Flags: Is-Preferred Is-Primary
+        Destination: fec0::/64, Local: fec0::a:0:0:5
+    Protocol tnp, MTU: 1500
+      Flags: None
+      Addresses
+        Local: 5
+
+Physical interface: gre, Enabled, Physical link is Up
+  Interface index: 10, SNMP ifIndex: 8
+  Type: GRE, Link-level type: GRE, MTU: Unlimited, Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: Point-To-Point SNMP-Traps
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: ipip, Enabled, Physical link is Up
+  Interface index: 11, SNMP ifIndex: 9
+  Type: IPIP, Link-level type: IP-over-IP, MTU: Unlimited, Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: lo0, Enabled, Physical link is Up
+  Interface index: 6, SNMP ifIndex: 6
+  Type: Loopback, MTU: Unlimited
+  Device flags   : Present Running Loopback
+  Interface flags: SNMP-Traps
+  Link flags     : None
+  Last flapped   : Never
+    Input packets : 461680159 
+    Output packets: 461680159
+
+  Logical interface lo0.0 (Index 64) (SNMP ifIndex 16) 
+    Flags: SNMP-Traps Encapsulation: Unspecified
+    Input packets : 461680159 
+    Output packets: 461680159
+    Protocol inet, MTU: Unlimited
+      Flags: Primary
+      Addresses, Flags: Preferred Is-Default Is-Primary
+        Local: 205.189.32.47
+      Addresses
+        Local: 205.189.32.51
+    Protocol iso, MTU: Unlimited
+      Flags: None
+      Addresses, Flags: Is-Default Is-Primary
+        Local: 02.0000.0205.0189.0032.0047
+    Protocol inet6, MTU: Unlimited
+      Flags: None
+      Addresses, Flags: Is-Default Is-Primary
+        Local: 2001:410:101::14
+      Addresses
+        Local: fe80::2a0:a5ff:fe12:795e
+
+  Logical interface lo0.16385 (Index 65) (SNMP ifIndex 70) 
+    Flags: SNMP-Traps Encapsulation: Unspecified
+    Input packets : 0 
+    Output packets: 0
+    Protocol inet, MTU: Unlimited
+      Flags: None
+    Protocol inet6, MTU: Unlimited
+      Flags: None
+      Addresses
+        Local: fe80::2a0:a5ff:fe12:795e
+
+Physical interface: lsi, Enabled, Physical link is Up
+  Interface index: 4, SNMP ifIndex: 4
+  Type: Software-Pseudo, Link-level type: LSI, MTU: 1496, Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link flags     : None
+  Last flapped   : Never
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: mtun, Enabled, Physical link is Up
+  Interface index: 66, SNMP ifIndex: 12
+  Type: Multicast-GRE, Link-level type: GRE, MTU: Unlimited, Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: pimd, Enabled, Physical link is Up
+  Interface index: 65, SNMP ifIndex: 11
+  Type: PIMD, Link-level type: PIM-Decapsulator, MTU: Unlimited,
+  Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: pime, Enabled, Physical link is Up
+  Interface index: 64, SNMP ifIndex: 10
+  Type: PIME, Link-level type: PIM-Encapsulator, MTU: Unlimited,
+  Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+    Input packets : 0 
+    Output packets: 0
+
+Physical interface: tap, Enabled, Physical link is Up
+  Interface index: 12, SNMP ifIndex: 7
+  Type: Software-Pseudo, Link-level type: Interface-Specific, MTU: Unlimited,
+  Speed: Unlimited
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link flags     : None
+  Last flapped   : Never
+    Input packets : 0 
+    Output packets: 0
+
+</pre>        </td></tr>
+</table>
+        <!--End content here-->
+
+<SCRIPT language=javascript1.2 src="http://www.canarie.ca/scripts/menu.js"></script>
+
+<map name="banner">
+<area shape="rect" alt="CANARIE" coords="213,5,453,77" href="http://www.canarie.ca/about/index.html" title="CANARIE Home">
+<area shape="default" nohref>
+</map>
+
+</BODY>
+</HTML>

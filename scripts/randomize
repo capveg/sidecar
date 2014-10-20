@@ -1,0 +1,27 @@
+#!/bin/sh
+# prepend random number from to each line of stdin 
+# use 'sort' to sort numbers into order b/c
+#	sort is much smarter then us and runs
+#	all on disk if needed
+# remove line numbers and print to stdout
+
+
+exec perl -n -e '$n=int(rand(4294967295));print "$n $_"' | sort -T . -n | perl -p -e 's/^\d+ //'
+
+#unlink($tmp);
+
+#
+#@stuff=<>;
+#	#foreach $thing ( @stuff){
+#	#	print "$thing \n";
+#	#	}
+#	#print "Sorting $#stuff numbers\n";
+#srand;
+#for( $t=0;$t<@stuff;$t++){
+#	$num=int (rand @stuff-$t);	
+#	$tmp=$stuff[$t];
+#	$stuff[$t]=$stuff[$t+$num];
+#	$stuff[$t+$num]=$tmp;
+#}
+#
+#print @stuff;

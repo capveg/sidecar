@@ -1,0 +1,3 @@
+1) receivers sometimes send SACK packets for stuff they have already acked...but then they stop
+2) lots of spurious timeouts... not good; verify VJ algorithm then consider screwing with it
+	- adds more credence to the Mark Allman  paper that says 1sec min RTO

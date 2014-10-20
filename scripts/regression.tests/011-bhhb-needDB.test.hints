@@ -1,0 +1,10 @@
+potentialAlias(ip209_124_176_12,ip209_124_178_12,allyipid).
+potentialNotAlias(ip205_175_101_5,ip205_175_103_9,quick).
+potentialNotAlias(ip205_175_101_5,ip205_175_103_5,quick).
+potentialNotAlias(ip205_175_101_9,ip205_175_103_5,quick).
+potentialNotAlias(ip205_175_101_9,ip205_175_103_9,quick).
+potentialNotAlias(ip192_43_217_157,ip205_124_244_41,quick).
+potentialNotAlias(ip192_43_217_157,ip205_124_244_177,quick).
+potentialNotAlias(ip205_124_244_177,ip205_124_244_41,quick).
+potentialNotAlias(ip205_175_108_25,ip205_175_110_17,quick).
+potentialNotAlias(ip205_124_244_177,ip205_124_244_9,quick).

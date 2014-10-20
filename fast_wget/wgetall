@@ -1,0 +1,34 @@
+#!/bin/sh
+
+level=10
+kbps=300
+header1='Accept-Charset: iso-8859-2'
+useragent="SidecarCrawler (capveg.cs.umd.edu)"
+delay="0"
+tries=3
+# seconds
+ctimeout=2
+rtimeout=1
+dtimeout=2
+
+
+acceptlist='html,htm,shtml,asp,php'
+
+wget \
+	--no-verbose 			\
+	--output-file=wgetall.$$ 	\
+	--span-hosts 			\
+	--recursive 			\
+	--level=$level 			\
+	--limit-rate=${kbps}k 		\
+	"--header=$header1" 		\
+	"--user-agent=$useragent" 	\
+	--connect-timeout=$ctimeout	\
+	--dns-timeout=$dtimeout		\
+	--read-timeout=$rtimeout	\
+	--waitretry=$delay 		\
+	--accept=$acceptlist		\
+	--random-wait 			\
+	--tries=$tries 			\
+	--save-headers			\
+	$@

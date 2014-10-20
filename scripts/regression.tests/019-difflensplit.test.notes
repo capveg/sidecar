@@ -1,0 +1,5 @@
+THis trace is a huge mess.  There is a RR multipathing split that happens at hop 1, and one path is TTL longer
+then the other.  This requries the more paranoid tookSamePath() checking in the perl where we have
+to test aRR[i]=bRR[i] for i=0 to min (#aRR,#bRR) as opposed to checking is the last entry the same.
+
+The ipcolo,mp2 amsterdam alias at the end is wrong, but we have insufficient info to figure that out here.

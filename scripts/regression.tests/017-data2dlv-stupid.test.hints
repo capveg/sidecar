@@ -1,0 +1,6 @@
+potentialAlias(ip208_48_23_53,ip67_17_80_156,allyipid).
+potentialAlias(ip67_17_71_25,ip67_17_81_228,allyipid).
+potentialNotAlias(ip208_48_23_53,ip67_17_81_228,quick).
+potentialNotAlias(ip67_17_80_156,ip67_17_81_228,quick).
+potentialNotAlias(ip67_17_71_25,ip67_17_80_156,quick).
+potentialNotAlias(ip208_48_23_53,ip67_17_71_25,quick).

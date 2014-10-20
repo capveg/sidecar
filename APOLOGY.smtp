@@ -1,0 +1,25 @@
+$dude,
+
+Apologies for the noise.  Aaron works with me on a research project
+to map the core of the Internet (i.e., not near your SMTP servers).
+Such a map will be extremely useful in understanding large scale Internet
+behavior and future Internet engineering projects.  You can check out the
+details at our project website http://www.cs.umd.edu/projects/sidecar .
+
+We have done everything we can think of to limit the load and
+intrusiveness of our experiments, for example, we rate limit the
+connections and make the smallest smtp session possible with just a
+HELO followed by a NOOP and a QUIT.  No mail or spam are sent in our
+connections, nor do we probe for valid e-mail addresses.
+
+If you let us know which servers your administer, we can remove them
+from our lists so that we don't bother you again.
+
+If you have any additional comments or concerns, please feel free to
+mail me.
+
+Apologies again,
+
+- Rob Sherwood
+University of Maryland
+.

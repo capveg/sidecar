@@ -1,0 +1,12 @@
+type(ip128_208_4_199,n).
+other(ip128_208_4_199,source).
+other(ip128_8_126_69,endhost).
+% Probes from empty.test/data-128.208.4.199:35343-128.8.126.69:80-494
+link(ip128_208_4_199,ip128_8_126_69,4).
+% Start-of-aliases-from-DB
+% Non-aliases from DB
+% Start-of-aliases-from-DB
+% End-of-aliases-from-DB
+tr(ip128_208_4_199_1,ip128_208_4_199,0,ip128_208_4_199,1).
+tr_only(ip128_208_4_199_2,ip128_208_4_199,0,ip128_208_4_199,1).
+% Hints

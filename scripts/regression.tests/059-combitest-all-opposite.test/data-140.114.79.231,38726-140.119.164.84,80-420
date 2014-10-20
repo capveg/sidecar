@@ -1,0 +1,50 @@
+140.114.79.231:38726-140.119.164.84:80 :: new connection: id = 420 time=1181500335.669388
+140.114.79.231:38726-140.119.164.84:80 -	Sending train=0 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(1) time=1181500335.720384
+- RECV TTL 1 it=0 from   140.114.79.254 (255)	ROUTER	 rtt=0.000407 s t=1181500335.720916 RR,  Macro
+- RECV TTL 2 it=0 from    140.114.2.137 (254)	ROUTER	 rtt=0.000852 s t=1181500335.721408 RR, hop 1 140.114.2.142 ,  Macro
+- RECV TTL 3 it=0 from    140.114.1.185 (253)	ROUTER	 rtt=0.001706 s t=1181500335.722336 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 ,  Macro
+- RECV TTL 4 it=0 from     140.114.1.70 (252)	ROUTER	 rtt=0.001985 s t=1181500335.722653 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 ,  Macro
+- RECV TTL 5 it=0 from   192.83.196.119 (251)	ROUTER	 rtt=0.004840 s t=1181500335.725543 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 ,  Macro
+- RECV TTL 6 it=0 from  140.119.240.254 (249)	ROUTER	 rtt=0.005619 s t=1181500335.726356 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 ,  Macro
+- RECV TTL 7 it=0 from  140.119.240.254 (249)	ROUTER	 rtt=0.006318 s t=1181500335.727088 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 , hop 6 140.119.240.230 ,  Macro
+- RECV TTL 8 it=0 from  140.119.167.253 (248)	ROUTER	 rtt=0.007083 s t=1181500335.727886 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 , hop 6 140.119.240.230 , hop 7 140.119.167.254 ,  Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=939524165.000000
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=939524165.000000
+BAD: got a probe response from ENDHOST: ttl=1 it=0 ignoring: t=939524165.000000
+- -	timeout on RPT 0	3 probes outstanding time=1181500340.726989
+140.114.79.231:38726-140.119.164.84:80 -	Sending train=1 type=DATA safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(1) time=1181500340.785864
+- RECV TTL 1 it=1 from   140.114.79.254 (255)	ROUTER	 rtt=0.000275 s t=1181500340.786782 Macro
+- RECV TTL 2 it=1 from    140.114.2.137 (254)	ROUTER	 rtt=0.000270 s t=1181500340.786864 Macro
+- RECV TTL 4 it=1 from     140.114.1.70 (252)	ROUTER	 rtt=0.000370 s t=1181500340.787029 Macro
+- RECV TTL 5 it=1 from   192.83.196.119 (251)	ROUTER	 rtt=0.002264 s t=1181500340.788953 Macro
+- RECV TTL 7 it=1 from  140.119.240.254 (249)	ROUTER	 rtt=0.002572 s t=1181500340.798646 Macro
+- RECV TTL 6 it=1 from    140.119.243.6 (250)	ROUTER	 rtt=0.002838 s t=1181500340.798866 Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=939524165.032511
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=939524165.032511
+BAD: got a probe response from ENDHOST: ttl=1 it=1 ignoring: t=939524165.032511
+- RECV TTL 8 it=1 from  140.119.167.253 (248)	ROUTER	 rtt=0.002850 s t=1181500340.798960 Macro
+- RECV TTL 3 it=1 from    140.114.1.185 (252)	ROUTER	 rtt=0.035133 s t=1181500340.821761 Macro
+- -	timeout on RPT 1	3 probes outstanding time=1181500345.786228
+140.114.79.231:38726-140.119.164.84:80 -	Sending train=2 type=DATA safettl=11 nProbes=11 payload=-1 RR=1 rto=5000000(1) time=1181500345.836360
+- RECV TTL 1 it=2 from   140.114.79.254 (255)	ROUTER	 rtt=0.000293 s t=1181500345.836720 RR,  Macro
+- RECV TTL 2 it=2 from    140.114.2.137 (254)	ROUTER	 rtt=0.000715 s t=1181500345.837193 RR, hop 1 140.114.2.142 ,  Macro
+- RECV TTL 3 it=2 from    140.114.1.185 (253)	ROUTER	 rtt=0.001642 s t=1181500345.838154 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 ,  Macro
+- RECV TTL 4 it=2 from     140.114.1.70 (252)	ROUTER	 rtt=0.002134 s t=1181500345.838678 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 ,  Macro
+- RECV TTL 5 it=2 from   192.83.196.119 (251)	ROUTER	 rtt=0.003757 s t=1181500345.840332 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 ,  Macro
+- RECV TTL 6 it=2 from    140.119.243.6 (250)	ROUTER	 rtt=0.004668 s t=1181500345.841275 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 ,  Macro
+- RECV TTL 7 it=2 from  140.119.240.254 (249)	ROUTER	 rtt=0.005333 s t=1181500345.841969 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 , hop 6 140.119.240.230 ,  Macro
+- RECV TTL 8 it=2 from  140.119.167.253 (248)	ROUTER	 rtt=0.006090 s t=1181500345.842757 RR, hop 1 140.114.2.142 , hop 2 140.114.1.190 , hop 3 140.114.1.69 , hop 4 192.83.196.114 , hop 5 140.119.243.5 , hop 6 140.119.240.230 , hop 7 140.119.167.254 ,  Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=939524165.023972
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=939524165.023972
+BAD: got a probe response from ENDHOST: ttl=1 it=2 ignoring: t=939524165.023972
+140.114.79.231:38726-140.119.164.84:80 :: connection FIN closed: id = 420 : time connected 14.999097 time=1181500350.668494
+- -	timeout on RPT 2	3 probes outstanding time=1181500350.837537
+140.114.79.231:38726-140.119.164.84:80 -	Sending train=3 type=FINACK safettl=11 nProbes=11 payload=-1 RR=0 rto=5000000(1) time=1181500350.888595
+- RECV TTL 2 it=3 from    140.114.2.137 (254)	ROUTER	 rtt=0.000331 s t=1181500350.900410 Macro
+- RECV TTL 1 it=3 from   140.114.79.254 (255)	ROUTER	 rtt=0.000411 s t=1181500350.900459 Macro
+- RECV TTL 3 it=3 from    140.114.1.185 (252)	ROUTER	 rtt=0.000762 s t=1181500350.900871 Macro
+- RECV TTL 4 it=3 from     140.114.1.70 (252)	ROUTER	 rtt=0.000768 s t=1181500350.900906 Macro
+- RECV TTL 5 it=3 from   192.83.196.119 (251)	ROUTER	 rtt=0.002392 s t=1181500350.902559 Macro
+- RECV TTL 6 it=3 from    140.119.243.6 (250)	ROUTER	 rtt=0.002422 s t=1181500350.902617 Macro
+BAD: got a probe response from ENDHOST: ttl=1 it=3 ignoring: t=939524165.017924
+140.114.79.231:38726-140.119.164.84:80 :: finished=INCOMPLETE connection destroyed alive=15.246041 at time=1181500350.915438
